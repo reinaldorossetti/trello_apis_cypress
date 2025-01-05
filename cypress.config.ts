@@ -6,7 +6,6 @@ export default defineConfig({
   reporter: 'mochawesome',
   reporterOptions: {
     reportPageTitle: 'Cypress Inline Reporter',
-    mochaFile: 'reports/my-report.xml',
     toConsole: true,
   },
   env: {
