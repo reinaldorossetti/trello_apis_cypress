@@ -25,7 +25,10 @@ jobs:
       continue-on-error: true
       with:
         spec: cypress/e2e/features/**/*.cy.ts
-        env:  allure=true
+      env:  
+        allure: true
+        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+        API_KEY: ${{ secrets.API_KEY }}
     - name: mostra as pastas
       run: ls -la
     - name:  Step 3 - Collect Allure files and generate allure-report folder
