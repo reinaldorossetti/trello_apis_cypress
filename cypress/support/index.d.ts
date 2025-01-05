@@ -8,5 +8,7 @@ declare namespace Cypress {
 
     create_a_board(project: any): Chainable<any>;
 
+    delete_board(_id: any): Chainable<any>;
+
   }
 }
