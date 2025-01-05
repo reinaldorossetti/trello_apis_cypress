@@ -1,15 +1,15 @@
 {
   "stats": {
     "suites": 1,
-    "tests": 1,
-    "passes": 1,
+    "tests": 2,
+    "passes": 0,
     "pending": 0,
-    "failures": 0,
-    "start": "2025-01-05T21:06:32.145Z",
-    "end": "2025-01-05T21:06:32.589Z",
-    "duration": 444,
-    "testsRegistered": 1,
-    "passPercent": 100,
+    "failures": 2,
+    "start": "2025-01-05T21:37:19.942Z",
+    "end": "2025-01-05T21:37:21.187Z",
+    "duration": 1245,
+    "testsRegistered": 2,
+    "passPercent": 0,
     "pendingPercent": 0,
     "other": 0,
     "hasOther": false,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "d8005139-d6e5-48c9-ab9c-bd3a04323664",
+      "uuid": "81521296-0096-4e69-986e-da212f80e17c",
       "title": "",
       "fullFile": "cypress/e2e/features/boards/boards_tests.cy.ts",
       "file": "cypress/e2e/features/boards/boards_tests.cy.ts",
@@ -27,40 +27,67 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "e637a372-e118-4c57-aea0-4c15943137c9",
-          "title": "Create Board",
+          "uuid": "baa7283a-14f6-4b05-8fa5-fd2e77faa196",
+          "title": "Feature Board",
           "fullFile": "",
           "file": "",
           "beforeHooks": [],
           "afterHooks": [],
           "tests": [
             {
-              "title": "successfully",
-              "fullTitle": "Create Board successfully",
+              "title": "Validated new Board",
+              "fullTitle": "Feature Board Validated new Board",
               "timedOut": null,
-              "duration": 413,
-              "state": "passed",
-              "speed": "fast",
-              "pass": true,
-              "fail": false,
+              "duration": 245,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
               "pending": false,
-              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"cypress/e2e/features/boards/boards_tests.cy.ts\"\n}",
-              "code": "const project = {\n    name: `${_faker_js_faker__WEBPACK_IMPORTED_MODULE_0__.a.company.name()}`,\n};\ncy.create_a_board(project)\n    .then(response => {\n    expect(response.status).to.equal(200);\n    expect(response.body.name).to.equal(project.name);\n});",
-              "err": {},
-              "uuid": "7f800394-b349-4b27-9213-80174460c3d6",
-              "parentUUID": "e637a372-e118-4c57-aea0-4c15943137c9",
+              "context": "[\n  {\n    \"title\": \"cypress-mochawesome-reporter-videos-failed\",\n    \"value\": \"cypress/e2e/features/boards/boards_tests.cy.ts\"\n  },\n  {\n    \"title\": \"cypress-mochawesome-reporter-screenshots\",\n    \"value\": [\n      [\n        \"/boards_tests.cy.ts/Feature Board -- Validated new Board (failed).png\"\n      ],\n      [\n        \"/boards_tests.cy.ts/Feature Board -- Validated new Board (failed) (attempt 2).png\"\n      ]\n    ]\n  }\n]",
+              "code": "const project = {\n    name: `${_faker_js_faker__WEBPACK_IMPORTED_MODULE_0__.a.company.name()}`,\n};\ncy.create_a_board(project)\n    .then(response => {\n    expect(response.status).to.equal(200);\n    expect(response.body.name).to.equal(project.name);\n    test_id = response.body.id;\n});",
+              "err": {
+                "message": "CypressError: `cy.request()` failed on:\n\nhttps://api.trello.com/1/boards/?idOrganization=5ab3fc19dea71407132fc4fb&name=Thompson%20-%20Hermann&key=4d436713332e70b6a73d3ab3018f6346&token=ATTA183529f9eba704dad5a1d04d2901df72162ab21a8c1e472bf1200c88a826b76974C89B2E\n\nThe response we received from your web server was:\n\n  > 400: Bad Request\n\nThis was considered a failure because the status code was not `2xx` or `3xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: POST\nURL: https://api.trello.com/1/boards/?idOrganization=5ab3fc19dea71407132fc4fb&name=Thompson%20-%20Hermann&key=4d436713332e70b6a73d3ab3018f6346&token=ATTA183529f9eba704dad5a1d04d2901df72162ab21a8c1e472bf1200c88a826b76974C89B2E\nHeaders: {\n  \"Connection\": \"keep-alive\",\n  \"user-agent\": \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Cypress/12.17.4 Chrome/106.0.5249.51 Electron/21.0.0 Safari/537.36\",\n  \"accept\": \"*/*\",\n  \"accept-encoding\": \"gzip, deflate\",\n  \"content-length\": 0\n}\n\n-----------------------------------------------------------\n\nThe response we got was:\n\nStatus: 400 - Bad Request\nHeaders: {\n  \"content-type\": \"application/json; charset=utf-8\",\n  \"content-length\": \"71\",\n  \"connection\": \"keep-alive\",\n  \"date\": \"Sun, 05 Jan 2025 21:37:20 GMT\",\n  \"referrer-policy\": \"strict-origin-when-cross-origin\",\n  \"x-dns-prefetch-control\": \"off\",\n  \"x-download-options\": \"noopen\",\n  \"x-frame-options\": \"DENY\",\n  \"x-permitted-cross-domain-policies\": \"none\",\n  \"surrogate-control\": \"no-store\",\n  \"cache-control\": \"no-store, no-cache, must-revalidate, proxy-revalidate\",\n  \"expires\": \"0\",\n  \"x-trello-version\": \"1.324072.0\",\n  \"x-trello-environment\": \"Production\",\n  \"x-rate-limit-db-query-time-interval-ms\": \"600000\",\n  \"x-rate-limit-db-query-time-max\": \"7200000\",\n  \"x-rate-limit-db-query-time-remaining\": \"7199990\",\n  \"x-rate-limit-api-token-interval-ms\": \"10000\",\n  \"x-rate-limit-api-token-max\": \"100\",\n  \"x-rate-limit-api-token-remaining\": \"98\",\n  \"x-rate-limit-api-key-interval-ms\": \"10000\",\n  \"x-rate-limit-api-key-max\": \"300\",\n  \"x-rate-limit-api-key-remaining\": \"298\",\n  \"access-control-allow-origin\": \"*\",\n  \"access-control-allow-methods\": \"GET, PUT, POST, DELETE\",\n  \"access-control-allow-headers\": \"Authorization, Accept, Content-Type\",\n  \"access-control-expose-headers\": \"x-rate-limit-api-key-interval-ms, x-rate-limit-api-key-max, x-rate-limit-api-key-remaining, x-rate-limit-api-token-interval-ms, x-rate-limit-api-token-max, x-rate-limit-api-token-remaining\",\n  \"x-rate-limit-member-interval-ms\": \"10000\",\n  \"x-rate-limit-member-max\": \"375\",\n  \"x-rate-limit-member-remaining\": \"373\",\n  \"server\": \"AtlassianEdge\",\n  \"x-content-type-options\": \"nosniff\",\n  \"x-xss-protection\": \"1; mode=block\",\n  \"atl-traceid\": \"c6062a2d6cec4c918c3ba32d149c3df2\",\n  \"atl-request-id\": \"c6062a2d-6cec-4c91-8c3b-a32d149c3df2\",\n  \"strict-transport-security\": \"max-age=63072000; preload\",\n  \"report-to\": \"{\\\"endpoints\\\": [{\\\"url\\\": \\\"https://dz8aopenkvv6s.cloudfront.net\\\"}], \\\"group\\\": \\\"endpoint-1\\\", \\\"include_subdomains\\\": true, \\\"max_age\\\": 600}\",\n  \"nel\": \"{\\\"failure_fraction\\\": 0.001, \\\"include_subdomains\\\": true, \\\"max_age\\\": 600, \\\"report_to\\\": \\\"endpoint-1\\\"}\",\n  \"server-timing\": \"atl-edge;dur=58,atl-edge-internal;dur=10,atl-edge-upstream;dur=50,atl-edge-pop;desc=\\\"aws-us-east-1\\\"\",\n  \"x-cache\": \"Error from cloudfront\",\n  \"via\": \"1.1 d7441270a7210a12742f2ba6f1dfb028.cloudfront.net (CloudFront)\",\n  \"x-amz-cf-pop\": \"IAD61-P2\",\n  \"x-amz-cf-id\": \"uXc-JHiA6y8FTc04b50APL3f66NTilygk-iHqX6hWaaGI3PxfS9z9w==\"\n}\nBody: {\n  \"message\": \"Cannot create board as organization is at its board limit\"\n}\n\n\nhttps://on.cypress.io/request",
+                "estack": "CypressError: `cy.request()` failed on:\n\nhttps://api.trello.com/1/boards/?idOrganization=5ab3fc19dea71407132fc4fb&name=Thompson%20-%20Hermann&key=4d436713332e70b6a73d3ab3018f6346&token=ATTA183529f9eba704dad5a1d04d2901df72162ab21a8c1e472bf1200c88a826b76974C89B2E\n\nThe response we received from your web server was:\n\n  > 400: Bad Request\n\nThis was considered a failure because the status code was not `2xx` or `3xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: POST\nURL: https://api.trello.com/1/boards/?idOrganization=5ab3fc19dea71407132fc4fb&name=Thompson%20-%20Hermann&key=4d436713332e70b6a73d3ab3018f6346&token=ATTA183529f9eba704dad5a1d04d2901df72162ab21a8c1e472bf1200c88a826b76974C89B2E\nHeaders: {\n  \"Connection\": \"keep-alive\",\n  \"user-agent\": \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Cypress/12.17.4 Chrome/106.0.5249.51 Electron/21.0.0 Safari/537.36\",\n  \"accept\": \"*/*\",\n  \"accept-encoding\": \"gzip, deflate\",\n  \"content-length\": 0\n}\n\n-----------------------------------------------------------\n\nThe response we got was:\n\nStatus: 400 - Bad Request\nHeaders: {\n  \"content-type\": \"application/json; charset=utf-8\",\n  \"content-length\": \"71\",\n  \"connection\": \"keep-alive\",\n  \"date\": \"Sun, 05 Jan 2025 21:37:20 GMT\",\n  \"referrer-policy\": \"strict-origin-when-cross-origin\",\n  \"x-dns-prefetch-control\": \"off\",\n  \"x-download-options\": \"noopen\",\n  \"x-frame-options\": \"DENY\",\n  \"x-permitted-cross-domain-policies\": \"none\",\n  \"surrogate-control\": \"no-store\",\n  \"cache-control\": \"no-store, no-cache, must-revalidate, proxy-revalidate\",\n  \"expires\": \"0\",\n  \"x-trello-version\": \"1.324072.0\",\n  \"x-trello-environment\": \"Production\",\n  \"x-rate-limit-db-query-time-interval-ms\": \"600000\",\n  \"x-rate-limit-db-query-time-max\": \"7200000\",\n  \"x-rate-limit-db-query-time-remaining\": \"7199990\",\n  \"x-rate-limit-api-token-interval-ms\": \"10000\",\n  \"x-rate-limit-api-token-max\": \"100\",\n  \"x-rate-limit-api-token-remaining\": \"98\",\n  \"x-rate-limit-api-key-interval-ms\": \"10000\",\n  \"x-rate-limit-api-key-max\": \"300\",\n  \"x-rate-limit-api-key-remaining\": \"298\",\n  \"access-control-allow-origin\": \"*\",\n  \"access-control-allow-methods\": \"GET, PUT, POST, DELETE\",\n  \"access-control-allow-headers\": \"Authorization, Accept, Content-Type\",\n  \"access-control-expose-headers\": \"x-rate-limit-api-key-interval-ms, x-rate-limit-api-key-max, x-rate-limit-api-key-remaining, x-rate-limit-api-token-interval-ms, x-rate-limit-api-token-max, x-rate-limit-api-token-remaining\",\n  \"x-rate-limit-member-interval-ms\": \"10000\",\n  \"x-rate-limit-member-max\": \"375\",\n  \"x-rate-limit-member-remaining\": \"373\",\n  \"server\": \"AtlassianEdge\",\n  \"x-content-type-options\": \"nosniff\",\n  \"x-xss-protection\": \"1; mode=block\",\n  \"atl-traceid\": \"c6062a2d6cec4c918c3ba32d149c3df2\",\n  \"atl-request-id\": \"c6062a2d-6cec-4c91-8c3b-a32d149c3df2\",\n  \"strict-transport-security\": \"max-age=63072000; preload\",\n  \"report-to\": \"{\\\"endpoints\\\": [{\\\"url\\\": \\\"https://dz8aopenkvv6s.cloudfront.net\\\"}], \\\"group\\\": \\\"endpoint-1\\\", \\\"include_subdomains\\\": true, \\\"max_age\\\": 600}\",\n  \"nel\": \"{\\\"failure_fraction\\\": 0.001, \\\"include_subdomains\\\": true, \\\"max_age\\\": 600, \\\"report_to\\\": \\\"endpoint-1\\\"}\",\n  \"server-timing\": \"atl-edge;dur=58,atl-edge-internal;dur=10,atl-edge-upstream;dur=50,atl-edge-pop;desc=\\\"aws-us-east-1\\\"\",\n  \"x-cache\": \"Error from cloudfront\",\n  \"via\": \"1.1 d7441270a7210a12742f2ba6f1dfb028.cloudfront.net (CloudFront)\",\n  \"x-amz-cf-pop\": \"IAD61-P2\",\n  \"x-amz-cf-id\": \"uXc-JHiA6y8FTc04b50APL3f66NTilygk-iHqX6hWaaGI3PxfS9z9w==\"\n}\nBody: {\n  \"message\": \"Cannot create board as organization is at its board limit\"\n}\n\n\nhttps://on.cypress.io/request\n    at <unknown> (https://api.trello.com/__cypress/runner/cypress_runner.js:132360:72)\n    at tryCatcher (https://api.trello.com/__cypress/runner/cypress_runner.js:1807:23)\n    at Promise._settlePromiseFromHandler (https://api.trello.com/__cypress/runner/cypress_runner.js:1519:31)\n    at Promise._settlePromise (https://api.trello.com/__cypress/runner/cypress_runner.js:1576:18)\n    at Promise._settlePromise0 (https://api.trello.com/__cypress/runner/cypress_runner.js:1621:10)\n    at Promise._settlePromises (https://api.trello.com/__cypress/runner/cypress_runner.js:1701:18)\n    at _drainQueueStep (https://api.trello.com/__cypress/runner/cypress_runner.js:2407:12)\n    at _drainQueue (https://api.trello.com/__cypress/runner/cypress_runner.js:2400:9)\n    at Async._drainQueues (https://api.trello.com/__cypress/runner/cypress_runner.js:2416:5)\n    at Async.drainQueues (https://api.trello.com/__cypress/runner/cypress_runner.js:2286:14)\nFrom Your Spec Code:\n    at Context.eval (webpack://trello_apis_cypress/./cypress/support/api_commands_board.ts:5:0)",
+                "diff": null
+              },
+              "uuid": "b398699e-3a17-4ed0-82c9-3f53580c32ce",
+              "parentUUID": "baa7283a-14f6-4b05-8fa5-fd2e77faa196",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Validated delete Board",
+              "fullTitle": "Feature Board Validated delete Board",
+              "timedOut": null,
+              "duration": 257,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "[\n  {\n    \"title\": \"cypress-mochawesome-reporter-videos-failed\",\n    \"value\": \"cypress/e2e/features/boards/boards_tests.cy.ts\"\n  },\n  {\n    \"title\": \"cypress-mochawesome-reporter-screenshots\",\n    \"value\": [\n      [\n        \"/boards_tests.cy.ts/Feature Board -- Validated delete Board (failed).png\"\n      ],\n      [\n        \"/boards_tests.cy.ts/Feature Board -- Validated delete Board (failed) (attempt 2).png\"\n      ]\n    ]\n  }\n]",
+              "code": "cy.delete_board(test_id)\n    .then(response => {\n    expect(response.status).to.equal(200);\n});",
+              "err": {
+                "message": "CypressError: `cy.request()` failed on:\n\nhttps://api.trello.com/1/boards/0?&key=4d436713332e70b6a73d3ab3018f6346&token=ATTA183529f9eba704dad5a1d04d2901df72162ab21a8c1e472bf1200c88a826b76974C89B2E\n\nThe response we received from your web server was:\n\n  > 400: Bad Request\n\nThis was considered a failure because the status code was not `2xx` or `3xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: DELETE\nURL: https://api.trello.com/1/boards/0?&key=4d436713332e70b6a73d3ab3018f6346&token=ATTA183529f9eba704dad5a1d04d2901df72162ab21a8c1e472bf1200c88a826b76974C89B2E\nHeaders: {\n  \"Connection\": \"keep-alive\",\n  \"user-agent\": \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Cypress/12.17.4 Chrome/106.0.5249.51 Electron/21.0.0 Safari/537.36\",\n  \"accept\": \"*/*\",\n  \"accept-encoding\": \"gzip, deflate\",\n  \"content-length\": 0\n}\n\n-----------------------------------------------------------\n\nThe response we got was:\n\nStatus: 400 - Bad Request\nHeaders: {\n  \"content-type\": \"text/plain; charset=utf-8\",\n  \"content-length\": \"10\",\n  \"connection\": \"keep-alive\",\n  \"date\": \"Sun, 05 Jan 2025 21:37:21 GMT\",\n  \"referrer-policy\": \"strict-origin-when-cross-origin\",\n  \"x-dns-prefetch-control\": \"off\",\n  \"x-download-options\": \"noopen\",\n  \"x-frame-options\": \"DENY\",\n  \"x-permitted-cross-domain-policies\": \"none\",\n  \"surrogate-control\": \"no-store\",\n  \"cache-control\": \"no-store, no-cache, must-revalidate, proxy-revalidate\",\n  \"expires\": \"0\",\n  \"x-trello-version\": \"1.324072.0\",\n  \"x-trello-environment\": \"Production\",\n  \"x-rate-limit-api-token-interval-ms\": \"10000\",\n  \"x-rate-limit-api-token-max\": \"100\",\n  \"x-rate-limit-api-token-remaining\": \"96\",\n  \"x-rate-limit-db-query-time-interval-ms\": \"600000\",\n  \"x-rate-limit-db-query-time-max\": \"7200000\",\n  \"x-rate-limit-db-query-time-remaining\": \"7199990\",\n  \"x-rate-limit-api-key-interval-ms\": \"10000\",\n  \"x-rate-limit-api-key-max\": \"300\",\n  \"x-rate-limit-api-key-remaining\": \"296\",\n  \"access-control-allow-origin\": \"*\",\n  \"access-control-allow-methods\": \"GET, PUT, POST, DELETE\",\n  \"access-control-allow-headers\": \"Authorization, Accept, Content-Type\",\n  \"access-control-expose-headers\": \"x-rate-limit-api-key-interval-ms, x-rate-limit-api-key-max, x-rate-limit-api-key-remaining, x-rate-limit-api-token-interval-ms, x-rate-limit-api-token-max, x-rate-limit-api-token-remaining\",\n  \"x-rate-limit-member-interval-ms\": \"10000\",\n  \"x-rate-limit-member-max\": \"375\",\n  \"x-rate-limit-member-remaining\": \"371\",\n  \"server\": \"AtlassianEdge\",\n  \"x-content-type-options\": \"nosniff\",\n  \"x-xss-protection\": \"1; mode=block\",\n  \"atl-traceid\": \"94568b710bf04b4b88e4c3b181769952\",\n  \"atl-request-id\": \"94568b71-0bf0-4b4b-88e4-c3b181769952\",\n  \"strict-transport-security\": \"max-age=63072000; preload\",\n  \"report-to\": \"{\\\"endpoints\\\": [{\\\"url\\\": \\\"https://dz8aopenkvv6s.cloudfront.net\\\"}], \\\"group\\\": \\\"endpoint-1\\\", \\\"include_subdomains\\\": true, \\\"max_age\\\": 600}\",\n  \"nel\": \"{\\\"failure_fraction\\\": 0.001, \\\"include_subdomains\\\": true, \\\"max_age\\\": 600, \\\"report_to\\\": \\\"endpoint-1\\\"}\",\n  \"server-timing\": \"atl-edge;dur=52,atl-edge-internal;dur=27,atl-edge-upstream;dur=36,atl-edge-pop;desc=\\\"aws-us-east-1\\\"\",\n  \"x-cache\": \"Error from cloudfront\",\n  \"via\": \"1.1 d7441270a7210a12742f2ba6f1dfb028.cloudfront.net (CloudFront)\",\n  \"x-amz-cf-pop\": \"IAD61-P2\",\n  \"x-amz-cf-id\": \"sEaZREeMEbGRwGc7yiVPeqsoxNDuRNV221ORnBiOL1fcOmi-l9zk4Q==\"\n}\nBody: invalid id\n\n\nhttps://on.cypress.io/request",
+                "estack": "CypressError: `cy.request()` failed on:\n\nhttps://api.trello.com/1/boards/0?&key=4d436713332e70b6a73d3ab3018f6346&token=ATTA183529f9eba704dad5a1d04d2901df72162ab21a8c1e472bf1200c88a826b76974C89B2E\n\nThe response we received from your web server was:\n\n  > 400: Bad Request\n\nThis was considered a failure because the status code was not `2xx` or `3xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: DELETE\nURL: https://api.trello.com/1/boards/0?&key=4d436713332e70b6a73d3ab3018f6346&token=ATTA183529f9eba704dad5a1d04d2901df72162ab21a8c1e472bf1200c88a826b76974C89B2E\nHeaders: {\n  \"Connection\": \"keep-alive\",\n  \"user-agent\": \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Cypress/12.17.4 Chrome/106.0.5249.51 Electron/21.0.0 Safari/537.36\",\n  \"accept\": \"*/*\",\n  \"accept-encoding\": \"gzip, deflate\",\n  \"content-length\": 0\n}\n\n-----------------------------------------------------------\n\nThe response we got was:\n\nStatus: 400 - Bad Request\nHeaders: {\n  \"content-type\": \"text/plain; charset=utf-8\",\n  \"content-length\": \"10\",\n  \"connection\": \"keep-alive\",\n  \"date\": \"Sun, 05 Jan 2025 21:37:21 GMT\",\n  \"referrer-policy\": \"strict-origin-when-cross-origin\",\n  \"x-dns-prefetch-control\": \"off\",\n  \"x-download-options\": \"noopen\",\n  \"x-frame-options\": \"DENY\",\n  \"x-permitted-cross-domain-policies\": \"none\",\n  \"surrogate-control\": \"no-store\",\n  \"cache-control\": \"no-store, no-cache, must-revalidate, proxy-revalidate\",\n  \"expires\": \"0\",\n  \"x-trello-version\": \"1.324072.0\",\n  \"x-trello-environment\": \"Production\",\n  \"x-rate-limit-api-token-interval-ms\": \"10000\",\n  \"x-rate-limit-api-token-max\": \"100\",\n  \"x-rate-limit-api-token-remaining\": \"96\",\n  \"x-rate-limit-db-query-time-interval-ms\": \"600000\",\n  \"x-rate-limit-db-query-time-max\": \"7200000\",\n  \"x-rate-limit-db-query-time-remaining\": \"7199990\",\n  \"x-rate-limit-api-key-interval-ms\": \"10000\",\n  \"x-rate-limit-api-key-max\": \"300\",\n  \"x-rate-limit-api-key-remaining\": \"296\",\n  \"access-control-allow-origin\": \"*\",\n  \"access-control-allow-methods\": \"GET, PUT, POST, DELETE\",\n  \"access-control-allow-headers\": \"Authorization, Accept, Content-Type\",\n  \"access-control-expose-headers\": \"x-rate-limit-api-key-interval-ms, x-rate-limit-api-key-max, x-rate-limit-api-key-remaining, x-rate-limit-api-token-interval-ms, x-rate-limit-api-token-max, x-rate-limit-api-token-remaining\",\n  \"x-rate-limit-member-interval-ms\": \"10000\",\n  \"x-rate-limit-member-max\": \"375\",\n  \"x-rate-limit-member-remaining\": \"371\",\n  \"server\": \"AtlassianEdge\",\n  \"x-content-type-options\": \"nosniff\",\n  \"x-xss-protection\": \"1; mode=block\",\n  \"atl-traceid\": \"94568b710bf04b4b88e4c3b181769952\",\n  \"atl-request-id\": \"94568b71-0bf0-4b4b-88e4-c3b181769952\",\n  \"strict-transport-security\": \"max-age=63072000; preload\",\n  \"report-to\": \"{\\\"endpoints\\\": [{\\\"url\\\": \\\"https://dz8aopenkvv6s.cloudfront.net\\\"}], \\\"group\\\": \\\"endpoint-1\\\", \\\"include_subdomains\\\": true, \\\"max_age\\\": 600}\",\n  \"nel\": \"{\\\"failure_fraction\\\": 0.001, \\\"include_subdomains\\\": true, \\\"max_age\\\": 600, \\\"report_to\\\": \\\"endpoint-1\\\"}\",\n  \"server-timing\": \"atl-edge;dur=52,atl-edge-internal;dur=27,atl-edge-upstream;dur=36,atl-edge-pop;desc=\\\"aws-us-east-1\\\"\",\n  \"x-cache\": \"Error from cloudfront\",\n  \"via\": \"1.1 d7441270a7210a12742f2ba6f1dfb028.cloudfront.net (CloudFront)\",\n  \"x-amz-cf-pop\": \"IAD61-P2\",\n  \"x-amz-cf-id\": \"sEaZREeMEbGRwGc7yiVPeqsoxNDuRNV221ORnBiOL1fcOmi-l9zk4Q==\"\n}\nBody: invalid id\n\n\nhttps://on.cypress.io/request\n    at <unknown> (https://api.trello.com/__cypress/runner/cypress_runner.js:132360:72)\n    at tryCatcher (https://api.trello.com/__cypress/runner/cypress_runner.js:1807:23)\n    at Promise._settlePromiseFromHandler (https://api.trello.com/__cypress/runner/cypress_runner.js:1519:31)\n    at Promise._settlePromise (https://api.trello.com/__cypress/runner/cypress_runner.js:1576:18)\n    at Promise._settlePromise0 (https://api.trello.com/__cypress/runner/cypress_runner.js:1621:10)\n    at Promise._settlePromises (https://api.trello.com/__cypress/runner/cypress_runner.js:1701:18)\n    at _drainQueueStep (https://api.trello.com/__cypress/runner/cypress_runner.js:2407:12)\n    at _drainQueue (https://api.trello.com/__cypress/runner/cypress_runner.js:2400:9)\n    at Async._drainQueues (https://api.trello.com/__cypress/runner/cypress_runner.js:2416:5)\n    at Async.drainQueues (https://api.trello.com/__cypress/runner/cypress_runner.js:2286:14)\nFrom Your Spec Code:\n    at Context.eval (webpack://trello_apis_cypress/./cypress/support/api_commands_board.ts:11:0)",
+                "diff": null
+              },
+              "uuid": "a049d529-12dd-4ae1-a272-2ec02e5a4f1d",
+              "parentUUID": "baa7283a-14f6-4b05-8fa5-fd2e77faa196",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
-          "passes": [
-            "7f800394-b349-4b27-9213-80174460c3d6"
+          "passes": [],
+          "failures": [
+            "b398699e-3a17-4ed0-82c9-3f53580c32ce",
+            "a049d529-12dd-4ae1-a272-2ec02e5a4f1d"
           ],
-          "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 413,
+          "duration": 502,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
