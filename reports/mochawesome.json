@@ -1,0 +1,103 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-01-05T20:47:07.872Z",
+    "end": "2025-01-05T20:47:08.317Z",
+    "duration": 445,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "fb6c9c10-859d-4a6c-b00c-ff548ec18595",
+      "title": "",
+      "fullFile": "cypress/e2e/features/boards/boards_tests.cy.ts",
+      "file": "cypress/e2e/features/boards/boards_tests.cy.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "8f068aa1-6c27-4aed-8117-53b7a9cae0b3",
+          "title": "Create Board",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "successfully",
+              "fullTitle": "Create Board successfully",
+              "timedOut": null,
+              "duration": 427,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"cypress/e2e/features/boards/boards_tests.cy.ts\"\n}",
+              "code": "const project = {\n    name: `${_faker_js_faker__WEBPACK_IMPORTED_MODULE_0__.a.company.name()}`,\n};\ncy.create_a_board(project)\n    .then(response => {\n    expect(response.status).to.equal(200);\n    expect(response.body.name).to.equal(project.name);\n});",
+              "err": {},
+              "uuid": "7a084d9e-4c30-4165-b65d-15a0e7ae9f31",
+              "parentUUID": "8f068aa1-6c27-4aed-8117-53b7a9cae0b3",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "7a084d9e-4c30-4165-b65d-15a0e7ae9f31"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 427,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportPageTitle": "Cypress Inline Reporter",
+        "toConsole": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
