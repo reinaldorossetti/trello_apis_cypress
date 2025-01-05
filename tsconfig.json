@@ -1,0 +1,26 @@
+{
+    "compilerOptions": {
+      "skipLibCheck": true,
+      "baseUrl": "./",
+      "rootDir": "./",
+      "target": "es6",
+      "lib": ["es6", "dom"],
+      "types": ["cypress", "node","@shelex/cypress-allure-plugin"],
+      "moduleResolution": "node",
+      "resolveJsonModule": true,
+      "esModuleInterop": true,
+      "allowJs": true,
+      "noEmit": true,
+      "allowImportingTsExtensions": true
+    },
+    "include": [
+      "cypress/e2e/features/**/*.cy.ts",
+      "cypress/support/*.ts",
+      "cypress/e2e/features/*.ts",
+      "cypress/e2e/**/**/*.ts"
+    ],
+    "exclude": ["node_modules/"],
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "preserveValueImports": false
+}

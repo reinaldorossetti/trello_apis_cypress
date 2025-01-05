@@ -1,0 +1,22 @@
+{
+  "scripts": {
+    "tests-prod": "cypress run --env allure=true --env video=true",
+    "open": "cypress open",
+    "report": "allure generate allure-report --clean && allure open allure-report"
+  },
+  "dependencies": {
+    "cypress": "12.14.0",
+    "jquery": "^3.7.1",
+    "@shelex/cypress-allure-plugin": "^2.37.0",
+    "@cypress/code-coverage": "3.10.4"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.3"
+  },
+  "name": "trello_apis_cypress",
+  "description": "Testes de API com Cypress em TypeScript, e Allure fornece o relatório dos testes. **",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "",
+  "license": "ISC"
+}
