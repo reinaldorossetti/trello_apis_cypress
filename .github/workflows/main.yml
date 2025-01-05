@@ -37,7 +37,6 @@ jobs:
     - name: mostra as pastas
       run: 
         ls -la
-        ls -la cypress
     - name: 🎁 Step 4 - Publishing Allure artifact to GitHub Actions
       uses: actions/upload-artifact@v4
       with:
