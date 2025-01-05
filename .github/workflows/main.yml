@@ -19,6 +19,9 @@ jobs:
       run: |
         npm install -g allure-commandline --save-dev |
         npm install
+    - name: Teste de API
+      run: |
+        echo "${{ vars.API_KEY }}"
     - name: Step 2 Cypress run
       uses: cypress-io/github-action@v6
       if: always()
@@ -27,8 +30,9 @@ jobs:
         spec: cypress/e2e/features/**/*.cy.ts
       env:  
         allure: true
-        ACCESS_TOKEN: ${{ vars.ACCESS_TOKEN }}
-        API_KEY: ${{ vars.API_KEY }}
+        ACCESS_TOKEN: "${{ vars.ACCESS_TOKEN }}"
+        API_KEY: "${{ vars.API_KEY }}"
+    
     - name: mostra as pastas
       run: ls -la
     - name:  Step 3 - Collect Allure files and generate allure-report folder
