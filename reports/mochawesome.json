@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2025-01-05T21:03:44.569Z",
-    "end": "2025-01-05T21:03:45.032Z",
-    "duration": 463,
+    "start": "2025-01-05T21:06:32.145Z",
+    "end": "2025-01-05T21:06:32.589Z",
+    "duration": 444,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "b73e99b7-cffd-4971-b4f5-05529753a642",
+      "uuid": "d8005139-d6e5-48c9-ab9c-bd3a04323664",
       "title": "",
       "fullFile": "cypress/e2e/features/boards/boards_tests.cy.ts",
       "file": "cypress/e2e/features/boards/boards_tests.cy.ts",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "68121447-2666-4a82-bb83-81b3e48895c4",
+          "uuid": "e637a372-e118-4c57-aea0-4c15943137c9",
           "title": "Create Board",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "successfully",
               "fullTitle": "Create Board successfully",
               "timedOut": null,
-              "duration": 437,
+              "duration": 413,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -47,20 +47,20 @@
               "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"cypress/e2e/features/boards/boards_tests.cy.ts\"\n}",
               "code": "const project = {\n    name: `${_faker_js_faker__WEBPACK_IMPORTED_MODULE_0__.a.company.name()}`,\n};\ncy.create_a_board(project)\n    .then(response => {\n    expect(response.status).to.equal(200);\n    expect(response.body.name).to.equal(project.name);\n});",
               "err": {},
-              "uuid": "b3a31a68-b681-4c5d-9e86-18b065f17645",
-              "parentUUID": "68121447-2666-4a82-bb83-81b3e48895c4",
+              "uuid": "7f800394-b349-4b27-9213-80174460c3d6",
+              "parentUUID": "e637a372-e118-4c57-aea0-4c15943137c9",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "b3a31a68-b681-4c5d-9e86-18b065f17645"
+            "7f800394-b349-4b27-9213-80174460c3d6"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 437,
+          "duration": 413,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
