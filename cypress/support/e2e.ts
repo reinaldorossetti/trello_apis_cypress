@@ -14,11 +14,10 @@
 // ***********************************************************
 
 // Import commands.js using ES2015 syntax:
-import './api_commands'
+import './api_commands_board'
 import 'cypress-mochawesome-reporter/register';
 
 // Alternatively you can use CommonJS syntax:
-// require('./commands')
 Cypress.on('uncaught:exception', (err, runnable) => {
   return false;
 });

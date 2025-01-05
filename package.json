@@ -1,8 +1,7 @@
 {
   "scripts": {
     "tests-prod": "cypress run --env allure=true --env video=true --reporter mochawesome",
-    "open": "cypress open",
-    "report": "allure generate allure-report --clean && allure open allure-report"
+    "open": "cypress open"
   },
   "dependencies": {
     "@cypress/code-coverage": "3.10.4",

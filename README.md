@@ -1,6 +1,6 @@
-# Cypress com TypeScript, Allure, Git Actions
+# Cypress com TypeScript, Mochawesome, Github Actions.
 
-** Exemplo de estrutura de automação de testes de API, feita com Cypress em TypeScript, e Allure fornece o relatório dos testes. **
+** Exemplo de estrutura de automação de testes de API, feita com Cypress em TypeScript, e Mochawesome fornece o relatório dos testes. **
 
 - [Instalação e execução](#instalação-e-execução)
   - [Pré-requisitos](#pré-requisitos)
@@ -50,38 +50,39 @@ Criar o arquivo:
 ```
 cypress.env.json
 ```
-Com o conteúdo, do ACCESS_TOKEN e API_KEY do seu usuário do trello:
+Com o conteúdo, do idOrganization, ACCESS_TOKEN e API_KEY do seu usuário do trello:
 ````
 {
   "ACCESS_TOKEN": "",
-  "API_KEY": ""
+  "API_KEY": "",
+  "idOrganization":""
 }
 
 ````
 
 Caso queira apenas rodar os testes, sem precisar subir ambiente, execute o seguinte comando:
 
-> Os testes serão executados em cima da página [VR](https://loja.vr.com.br/)
+> Os testes serão executados em cima da url [TRELLO](https://api.trello.com/)
 
 #### Rodar os Testes de API.
 ```sh
 npm run tests-prod
 ```
-Para exibir o Report (Foi utilizado o Allure Report):
+Para exibir Cypress:
 ```sh
-npm run report
+npm run open
 ```
 
 As variáveis por ambiente estão definidos dentro dos arquivos cypress.config.ts
 
 #### Resultado
 
-Com allure report:
+Exibir o relatório no github:
 ```sh
-https://reinaldorossetti.github.io/cypress-typescript-allure-report/allure-report/#suites/
+https://reinaldorossetti.github.io/trello_apis_cypress/reports/mochawesome.html
 ```
-Actions:
-https://github.com/reinaldorossetti/cypress-typescript-allure-report/actions
+Caminho do Actions:
+https://github.com/reinaldorossetti/trello_apis_cypress/actions
 
 **Passo 4** - Como funciona a Estrutura do Projeto:
 
@@ -95,10 +96,10 @@ cypress-typescript-allure-report/
  ├─ cypress/                                - Pasta do Cypress com as Automações.
  |   ├─ e2e/ features /                     - Pasta dos testes end to end, separado por features.
  |       ├─ nome_da_feature
- |          ├─ virtual_shopping_cart.cy.ts  - Feature do shopping cart, contendo todo o passo a passo.
- |          └─ elements /                   - Elementos e Textos relacionado a tela que esta sendo testada.
+ |          ├─ boards_tests.cy.ts           - Feature de Boards, contendo a execução dos testes.
+testada.
  |   └─ support/  
- |       ├─ commands.ts                     - Comandos personalizados que estão utilizando o Cypress.Commands.
+ |       ├─ api_commands_board.ts           - Comandos personalizados adicionado ao Cypress.Commands da feature de boards.
  |       ├─ e2e.ts                          - Os imports e Setup para os testes e2e.  
  |       └─ index.d.js                      - Os comandos que estão no commands.ts, precisam ser declados na interface Chainable<Subject>.
  ├─ cypress.config.ts                       - Arquivo principal de configuração do Cypress.
