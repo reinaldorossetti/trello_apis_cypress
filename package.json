@@ -1,14 +1,13 @@
 {
   "scripts": {
-    "tests-prod": "cypress run --env allure=true --env video=true",
+    "tests-prod": "cypress run --env allure=true --env video=true --reporter mochawesome",
     "open": "cypress open",
     "report": "allure generate allure-report --clean && allure open allure-report"
   },
   "dependencies": {
     "@cypress/code-coverage": "3.10.4",
-    "@shelex/cypress-allure-plugin": "^2.37.0",
     "cypress": "12.17.4",
-    "jquery": "^3.7.1"
+    "cypress-mochawesome-reporter": "3.8.2"
   },
   "devDependencies": {
     "@faker-js/faker": "^9.3.0",
@@ -16,9 +15,9 @@
     "typescript": "^5.3.3"
   },
   "name": "trello_apis_cypress",
-  "description": "Testes de API com Cypress em TypeScript, e Allure fornece o relatório dos testes. **",
+  "description": "Testes de API com Cypress em TypeScript, e Allure fornece o relatório dos testes.",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "cypress.config.ts",
   "author": "",
   "license": "ISC"
 }
