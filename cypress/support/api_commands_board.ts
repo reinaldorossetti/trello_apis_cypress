@@ -9,6 +9,13 @@ Cypress.Commands.add('create_a_board', _faker => {
   })
 })
 
+Cypress.Commands.add('open_boards', () => {
+  cy.request({
+    method: 'GET',
+    url: `/1/members/me?boards=open&key=${API_KEY}&token=${API_TOKEN}`,
+  })
+})
+
 Cypress.Commands.add('delete_board', _id => {
   cy.request({
     method: 'DELETE',

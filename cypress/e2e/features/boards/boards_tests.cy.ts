@@ -18,6 +18,7 @@ describe('Feature Board', () => {
   })
 
   it('Validated delete Board', () => {
+    cy.open_boards()
     cy.delete_board(test_id)
       .then(response => {
         expect(response.status).to.equal(200)
