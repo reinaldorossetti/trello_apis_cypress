@@ -118,7 +118,7 @@ Nos testes precisamos adicionar os comandos abaixos:
 ````
 ### Em casos de erro de certificado.
 npm config set strict-ssl false
-
+NODE_TLS_REJECT_UNAUTHORIZED=0 cypress run --env allure=true --env video=true
 
 ### Referências:  
 [Cypress](https://www.cypress.io)

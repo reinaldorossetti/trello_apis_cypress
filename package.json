@@ -7,11 +7,12 @@
   "dependencies": {
     "@cypress/code-coverage": "3.10.4",
     "@shelex/cypress-allure-plugin": "^2.37.0",
-    "cypress": "^12.14.0",
+    "cypress": "12.17.4",
     "jquery": "^3.7.1"
   },
   "devDependencies": {
     "@faker-js/faker": "^9.3.0",
+    "ts-loader": "^9.5.1",
     "typescript": "^5.3.3"
   },
   "name": "trello_apis_cypress",
