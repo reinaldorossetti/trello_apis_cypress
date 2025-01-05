@@ -1,4 +1,3 @@
-import { faker } from '@faker-js/faker'
 const API_TOKEN = `${Cypress.env('ACCESS_TOKEN')}`
 const API_KEY = `${Cypress.env('API_KEY')}`
 

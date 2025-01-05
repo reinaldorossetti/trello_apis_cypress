@@ -116,6 +116,9 @@ Nos testes precisamos adicionar os comandos abaixos:
     allureMocha.allure.parameter('body', String(response.text))
     allureMocha.allure.severity('minor')
 ````
+### Em casos de erro de certificado.
+npm config set strict-ssl false
+
 
 ### Referências:  
 [Cypress](https://www.cypress.io)
