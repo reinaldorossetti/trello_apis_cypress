@@ -109,19 +109,11 @@ testada.
  └─ tsconfig.json                           - Arquivo de Configuração do TypeScript.
 ```
 
-## Allure report  
-Podemos adicionar variaveis e severidade dos testes para ser exibidos no report.
-Tipos de severidade que podemos usar os tipos: blocker, critical, minor, trivial.O tipo normal é padrão, não precisando ser adicionada.
-Nos testes precisamos adicionar os comandos abaixos:
-````js
-    allureMocha.allure.parameter('body', String(response.text))
-    allureMocha.allure.severity('minor')
-````
 ### Em casos de erro de certificado.
-npm config set strict-ssl false
-NODE_TLS_REJECT_UNAUTHORIZED=0 cypress run --env allure=true --env video=true
+npm config set strict-ssl false  
+NODE_TLS_REJECT_UNAUTHORIZED=0 cypress run --env allure=true --env video=true --reporter mochawesome  
 npx cypress run --config-file cypress.config.ts
 
 ### Referências:  
 [Cypress](https://www.cypress.io)
-[Allure](https://github.com/Shelex/cypress-allure-plugin)  
+[TypeScript](https://docs.cypress.io/app/tooling/typescript-support)
