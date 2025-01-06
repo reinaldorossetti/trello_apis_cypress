@@ -4,13 +4,11 @@ export default defineConfig({
   defaultCommandTimeout: 30000,
   screenshotOnRunFailure: true,
   reporter: 'cypress-multi-reporters',
-  "reporterOptions": {
-    // disable overwrite to generate many JSON reports
+  reporterOptions: {
+    "reportDir": "cypress/reports/mochawesome-report",
     "overwrite": false,
-    // do not generate intermediate HTML reports
     "html": false,
-    // generate intermediate JSON reports
-    "json": true
+    "json": true,
   },
   env: {
     allure: true,
