@@ -34,8 +34,11 @@ jobs:
         ACCESS_TOKEN: "${{ secrets.ACCESS_TOKEN }}"
         API_KEY: "${{ secrets.API_KEY }}"
     
-    - name: Gerar o relatório agregado.
-      run: 
+    - uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+    - name: Step 4 - Roda o report
+      run: | 
         npm run report
     - name: 🎁 Step 4 - mochawesome-report.html
       uses: actions/upload-artifact@v4
@@ -48,7 +51,7 @@ jobs:
       with:
         name: mochawesome-report
         path: mochawesome-report/assets
-        
+
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
       with:
