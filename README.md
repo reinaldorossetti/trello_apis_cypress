@@ -79,7 +79,7 @@ As variáveis por ambiente estão definidos dentro dos arquivos cypress.config.t
 
 Exibir o relatório no github:
 ```sh
-https://reinaldorossetti.github.io/trello_apis_cypress/reports/mochawesome.html
+https://reinaldorossetti.github.io/trello_apis_cypress/reports/mochawesomeReport.html
 ```
 Caminho do Actions:
 https://github.com/reinaldorossetti/trello_apis_cypress/actions
