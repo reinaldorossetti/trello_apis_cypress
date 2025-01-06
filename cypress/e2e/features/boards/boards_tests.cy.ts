@@ -1,7 +1,7 @@
 /// <reference types="cypress" />
 import { faker } from '@faker-js/faker'
 
-var test_id = 0
+var board_id = 0
 
 describe('Feature Board', () => {
   it('Validated new Board', () => {
@@ -13,13 +13,13 @@ describe('Feature Board', () => {
       .then(response => {
         expect(response.status).to.equal(200)
         expect(response.body.name).to.equal(project.name)
-        test_id = response.body.id
+        board_id = response.body.id
       })
   })
 
   it('Validated delete Board', () => {
     cy.open_boards()
-    cy.delete_board(test_id)
+    cy.delete_board(board_id)
       .then(response => {
         expect(response.status).to.equal(200)
       })
