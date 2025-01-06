@@ -3,7 +3,7 @@ import { defineConfig } from "cypress";
 export default defineConfig({
   defaultCommandTimeout: 30000,
   screenshotOnRunFailure: true,
-  reporter: 'cypress-multi-reporters',
+  reporter: 'mochawesome',
   reporterOptions: {
     // disable overwrite to generate many JSON reports
     "overwrite": false,
