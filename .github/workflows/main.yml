@@ -39,7 +39,7 @@ jobs:
         node-version: '18'
     - name: Step 4 - Roda o report
       run: | 
-        npx mochawesome-merge > ./mochawesome.json && npx marge ./mochawesome.json
+        npm run report
     - name: 🎁 Step 4 - mochawesome-report.html
       uses: actions/upload-artifact@v4
       with:
