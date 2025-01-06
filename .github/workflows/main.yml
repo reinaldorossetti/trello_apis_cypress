@@ -40,9 +40,10 @@ jobs:
       with:
         node-version: '18'
     - name: Step 4 - Roda o report
-      run: | 
+      run: |
+        ls -la mochawesome-report
         npm run report
-
+        ls -la mochawesome-report
     - name: 🎁 Step 5 - mochawesome-report.html
       uses: actions/upload-artifact@v4
       with:

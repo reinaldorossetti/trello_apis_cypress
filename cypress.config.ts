@@ -5,9 +5,11 @@ export default defineConfig({
   screenshotOnRunFailure: true,
   reporter: 'cypress-multi-reporters',
   reporterOptions: {
-    "reportDir": "cypress/reports/mochawesome-report",
+    // disable overwrite to generate many JSON reports
     "overwrite": false,
+    // do not generate intermediate HTML reports
     "html": false,
+    // generate intermediate JSON reports
     "json": true,
   },
   env: {
