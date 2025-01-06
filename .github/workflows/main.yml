@@ -39,19 +39,13 @@ jobs:
         node-version: '18'
     - name: Step 4 - Roda o report
       run: | 
-        npm run report
+        npx mochawesome-merge > ./reportMocha.json && npx marge ./reportMocha.json
     - name: 🎁 Step 4 - mochawesome-report.html
       uses: actions/upload-artifact@v4
       with:
         name: mochawesome-report
-        path: mochawesome-report/mochawesome-report
+        path: mochawesome-report/
     
-    - name: 🎁 Step 4 - Publishing assets
-      uses: actions/upload-artifact@v4
-      with:
-        name: mochawesome-report
-        path: mochawesome-report/assets
-
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
       with:
