@@ -2,7 +2,7 @@
   "scripts": {
     "tests-prod": "cypress run --env allure=true --env video=true --reporter mochawesome",
     "open": "cypress open",
-    "report": "npx mochawesome-merge > ./reportMocha.json && npx marge ./reportMocha.json"
+    "report": "npx mochawesome-merge > ./mochawesome.json && npx marge ./mochawesome.json"
   },
   "dependencies": {
     "@cypress/code-coverage": "3.10.4",
