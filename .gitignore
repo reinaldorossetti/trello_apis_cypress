@@ -137,3 +137,4 @@ dist
 .pnp.*
 cypress.env.json
 mochawesome-report/
+mochawesome.json
