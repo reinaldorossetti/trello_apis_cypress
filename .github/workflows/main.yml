@@ -34,14 +34,20 @@ jobs:
         ACCESS_TOKEN: "${{ secrets.ACCESS_TOKEN }}"
         API_KEY: "${{ secrets.API_KEY }}"
     
-    - name: mostra as pastas
+    - name: Gerar o relatório agregado.
       run: 
-        ls -la
-    - name: 🎁 Step 4 - Publishing Allure artifact to GitHub Actions
+        npm run report
+    - name: 🎁 Step 4 - mochawesome-report.html
       uses: actions/upload-artifact@v4
       with:
         name: mochawesome-report
-        path: mochawesome-report
+        path: mochawesome-report/mochawesome-report
+    
+    - name: 🎁 Step 4 - Publishing assets
+      uses: actions/upload-artifact@v4
+      with:
+        name: mochawesome-report
+        path: mochawesome-report/assets
         
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3

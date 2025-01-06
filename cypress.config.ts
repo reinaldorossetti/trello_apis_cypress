@@ -3,15 +3,18 @@ import { defineConfig } from "cypress";
 export default defineConfig({
   defaultCommandTimeout: 30000,
   screenshotOnRunFailure: true,
-  reporter: 'mochawesome',
-  reporterOptions: {
-    reportPageTitle: 'Cypress Inline Reporter',
-    toConsole: true,
+  reporter: 'cypress-multi-reporters',
+  "reporterOptions": {
+    // disable overwrite to generate many JSON reports
+    "overwrite": false,
+    // do not generate intermediate HTML reports
+    "html": false,
+    // generate intermediate JSON reports
+    "json": true
   },
   env: {
     allure: true,
     video: false,
-    allureReuseAfterSpec: true
   },
   
   e2e: {
