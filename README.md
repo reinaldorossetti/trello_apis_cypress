@@ -113,6 +113,7 @@ testada.
 npm config set strict-ssl false  
 NODE_TLS_REJECT_UNAUTHORIZED=0 cypress run --env allure=true --env video=true --reporter mochawesome  
 npx cypress run --config-file cypress.config.ts
+npx mochawesome-merge ./mochawesome-report/*.json > mochawesomeReport.json
 
 ### Referências:  
 [Cypress](https://www.cypress.io)
