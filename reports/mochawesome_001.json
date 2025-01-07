@@ -5,9 +5,9 @@
     "passes": 2,
     "pending": 0,
     "failures": 0,
-    "start": "2025-01-07T15:38:59.948Z",
-    "end": "2025-01-07T15:39:01.415Z",
-    "duration": 1467,
+    "start": "2025-01-07T18:13:37.639Z",
+    "end": "2025-01-07T18:13:39.158Z",
+    "duration": 1519,
     "testsRegistered": 2,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "244a3bb0-d022-4687-9969-75cb58188047",
+      "uuid": "24e4603a-6461-4bee-a80c-0bc480313c8f",
       "title": "",
       "fullFile": "cypress/e2e/features/boards/card_tests.cy.ts",
       "file": "cypress/e2e/features/boards/card_tests.cy.ts",
@@ -27,18 +27,18 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "3093b9e2-ddb5-4816-92b6-d1182e0d2af9",
-          "title": "Feature Card",
+          "uuid": "c06e8a56-1039-4802-b3d9-213266957770",
+          "title": "Funcionalidade de Card",
           "fullFile": "",
           "file": "",
           "beforeHooks": [],
           "afterHooks": [],
           "tests": [
             {
-              "title": "Validated new Card",
-              "fullTitle": "Feature Card Validated new Card",
+              "title": "CT001 - Cenário - Criação de um novo Card no Board do Trello - Teste Positivo",
+              "fullTitle": "Funcionalidade de Card CT001 - Cenário - Criação de um novo Card no Board do Trello - Teste Positivo",
               "timedOut": null,
-              "duration": 659,
+              "duration": 717,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -47,16 +47,16 @@
               "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"cypress/e2e/features/boards/card_tests.cy.ts\"\n}",
               "code": "cy.create_a_new_list(board_id)\n    .then(response => {\n    expect(response.status).to.equal(200);\n    list_id = response.body.id;\n});\ncy.create_a_card(list_id)\n    .then(response => {\n    expect(response.status).to.equal(200);\n    // Validar o schema dos dados de retorno do endpoint.\n    expect(response.body).to.be.jsonSchema(_support_schemas_create_card__WEBPACK_IMPORTED_MODULE_0__[\"default\"]);\n    card_id = response.body.id;\n});",
               "err": {},
-              "uuid": "5a655b03-cfd6-49d9-a290-6171e953a9d0",
-              "parentUUID": "3093b9e2-ddb5-4816-92b6-d1182e0d2af9",
+              "uuid": "ddfeddf2-3b6e-47f9-b024-a35d56e6849b",
+              "parentUUID": "c06e8a56-1039-4802-b3d9-213266957770",
               "isHook": false,
               "skipped": false
             },
             {
-              "title": "Validated delete Card",
-              "fullTitle": "Feature Card Validated delete Card",
+              "title": "CT002 - Cenário - Exclusão de um Card no Board do Trello - Teste Positivo",
+              "fullTitle": "Funcionalidade de Card CT002 - Cenário - Exclusão de um Card no Board do Trello - Teste Positivo",
               "timedOut": null,
-              "duration": 793,
+              "duration": 779,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -65,21 +65,21 @@
               "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"cypress/e2e/features/boards/card_tests.cy.ts\"\n}",
               "code": "cy.open_boards();\ncy.delete_card(card_id)\n    .then(response => {\n    expect(response.status).to.equal(200);\n});",
               "err": {},
-              "uuid": "c9817548-701f-4804-8d83-14f7e267abae",
-              "parentUUID": "3093b9e2-ddb5-4816-92b6-d1182e0d2af9",
+              "uuid": "18c9f80d-1318-4354-8722-bbb5af750918",
+              "parentUUID": "c06e8a56-1039-4802-b3d9-213266957770",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "5a655b03-cfd6-49d9-a290-6171e953a9d0",
-            "c9817548-701f-4804-8d83-14f7e267abae"
+            "ddfeddf2-3b6e-47f9-b024-a35d56e6849b",
+            "18c9f80d-1318-4354-8722-bbb5af750918"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 1452,
+          "duration": 1496,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
