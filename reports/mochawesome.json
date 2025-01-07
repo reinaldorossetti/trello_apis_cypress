@@ -5,9 +5,9 @@
     "passes": 2,
     "pending": 0,
     "failures": 0,
-    "start": "2025-01-06T23:31:27.370Z",
-    "end": "2025-01-06T23:31:29.454Z",
-    "duration": 2084,
+    "start": "2025-01-07T15:35:25.422Z",
+    "end": "2025-01-07T15:35:27.334Z",
+    "duration": 1912,
     "testsRegistered": 2,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "d4979fa5-d14e-4ad0-8db5-b2c804497ca3",
+      "uuid": "8ab8ab56-8732-468b-807b-d979c071090d",
       "title": "",
       "fullFile": "cypress/e2e/features/boards/boards_tests.cy.ts",
       "file": "cypress/e2e/features/boards/boards_tests.cy.ts",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "72721969-f852-4ceb-ba9c-57590c59a803",
+          "uuid": "bb5af921-98b4-441c-8e6c-0ff0817c53f8",
           "title": "Feature Board",
           "fullFile": "",
           "file": "",
@@ -38,17 +38,17 @@
               "title": "Validated new Board",
               "fullTitle": "Feature Board Validated new Board",
               "timedOut": null,
-              "duration": 476,
+              "duration": 472,
               "state": "passed",
               "speed": "fast",
               "pass": true,
               "fail": false,
               "pending": false,
               "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"cypress/e2e/features/boards/boards_tests.cy.ts\"\n}",
-              "code": "const project = {\n    name: `${_faker_js_faker__WEBPACK_IMPORTED_MODULE_0__.a.company.name()}`,\n};\ncy.create_a_board(project)\n    .then(response => {\n    expect(response.status).to.equal(200);\n    expect(response.body.name).to.equal(project.name);\n    board_id = response.body.id;\n});",
+              "code": "const project = {\n    name: `${_faker_js_faker__WEBPACK_IMPORTED_MODULE_1__.a.company.name()}`,\n};\ncy.create_a_board(project)\n    .then(response => {\n    expect(response.status).to.equal(200);\n    expect(response.body.name).to.equal(project.name);\n    board_id = response.body.id;\n    // Validar o schema dos dados de retorno do endpoint.\n    expect(response.body).to.be.jsonSchema(_support_schemas_create_board__WEBPACK_IMPORTED_MODULE_0__[\"default\"]);\n});",
               "err": {},
-              "uuid": "5576a298-e0f2-4ba5-8401-803e3231b4db",
-              "parentUUID": "72721969-f852-4ceb-ba9c-57590c59a803",
+              "uuid": "70c2c6b1-2ed7-4049-aab5-a79585005701",
+              "parentUUID": "bb5af921-98b4-441c-8e6c-0ff0817c53f8",
               "isHook": false,
               "skipped": false
             },
@@ -56,7 +56,7 @@
               "title": "Validated delete Board",
               "fullTitle": "Feature Board Validated delete Board",
               "timedOut": null,
-              "duration": 1587,
+              "duration": 1419,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -65,21 +65,21 @@
               "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"cypress/e2e/features/boards/boards_tests.cy.ts\"\n}",
               "code": "cy.open_boards();\ncy.delete_board(board_id)\n    .then(response => {\n    expect(response.status).to.equal(200);\n});",
               "err": {},
-              "uuid": "57b75894-9d44-43a2-82ab-491daed9a27c",
-              "parentUUID": "72721969-f852-4ceb-ba9c-57590c59a803",
+              "uuid": "7f2853fe-8886-4b11-921b-ab5e1af42ccf",
+              "parentUUID": "bb5af921-98b4-441c-8e6c-0ff0817c53f8",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "5576a298-e0f2-4ba5-8401-803e3231b4db",
-            "57b75894-9d44-43a2-82ab-491daed9a27c"
+            "70c2c6b1-2ed7-4049-aab5-a79585005701",
+            "7f2853fe-8886-4b11-921b-ab5e1af42ccf"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 2063,
+          "duration": 1891,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

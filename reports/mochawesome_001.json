@@ -5,9 +5,9 @@
     "passes": 2,
     "pending": 0,
     "failures": 0,
-    "start": "2025-01-06T23:31:32.605Z",
-    "end": "2025-01-06T23:31:34.181Z",
-    "duration": 1576,
+    "start": "2025-01-07T15:35:30.657Z",
+    "end": "2025-01-07T15:35:32.486Z",
+    "duration": 1829,
     "testsRegistered": 2,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "f55fe76a-b225-4db2-92a3-eef9cfa0cb62",
+      "uuid": "550aa50d-fbc3-4ce6-a479-7a1c1a8e9c66",
       "title": "",
       "fullFile": "cypress/e2e/features/boards/card_tests.cy.ts",
       "file": "cypress/e2e/features/boards/card_tests.cy.ts",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "71b965ab-58c9-4b87-aa78-cbb49a223399",
+          "uuid": "add104b5-ed77-48f2-8342-cb38a61c517c",
           "title": "Feature Card",
           "fullFile": "",
           "file": "",
@@ -38,17 +38,17 @@
               "title": "Validated new Card",
               "fullTitle": "Feature Card Validated new Card",
               "timedOut": null,
-              "duration": 715,
+              "duration": 1001,
               "state": "passed",
               "speed": "fast",
               "pass": true,
               "fail": false,
               "pending": false,
               "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"cypress/e2e/features/boards/card_tests.cy.ts\"\n}",
-              "code": "cy.create_a_new_list(board_id)\n    .then(response => {\n    expect(response.status).to.equal(200);\n    list_id = response.body.id;\n});\ncy.create_a_card(list_id)\n    .then(response => {\n    expect(response.status).to.equal(200);\n    card_id = response.body.id;\n});",
+              "code": "cy.create_a_new_list(board_id)\n    .then(response => {\n    expect(response.status).to.equal(200);\n    list_id = response.body.id;\n});\ncy.create_a_card(list_id)\n    .then(response => {\n    expect(response.status).to.equal(200);\n    // Validar o schema dos dados de retorno do endpoint.\n    expect(response.body).to.be.jsonSchema(_support_schemas_create_card__WEBPACK_IMPORTED_MODULE_0__[\"default\"]);\n    card_id = response.body.id;\n});",
               "err": {},
-              "uuid": "639843e1-02f6-4d24-acf4-6eaf8c536b70",
-              "parentUUID": "71b965ab-58c9-4b87-aa78-cbb49a223399",
+              "uuid": "b72c5110-967c-499b-b548-c2178d713a68",
+              "parentUUID": "add104b5-ed77-48f2-8342-cb38a61c517c",
               "isHook": false,
               "skipped": false
             },
@@ -56,7 +56,7 @@
               "title": "Validated delete Card",
               "fullTitle": "Feature Card Validated delete Card",
               "timedOut": null,
-              "duration": 841,
+              "duration": 811,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -65,21 +65,21 @@
               "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"cypress/e2e/features/boards/card_tests.cy.ts\"\n}",
               "code": "cy.open_boards();\ncy.delete_card(card_id)\n    .then(response => {\n    expect(response.status).to.equal(200);\n});",
               "err": {},
-              "uuid": "eb1ac11d-127c-49f1-aae5-6d66918757de",
-              "parentUUID": "71b965ab-58c9-4b87-aa78-cbb49a223399",
+              "uuid": "715094e4-12a0-4eb2-b697-16f0ed7b0206",
+              "parentUUID": "add104b5-ed77-48f2-8342-cb38a61c517c",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "639843e1-02f6-4d24-acf4-6eaf8c536b70",
-            "eb1ac11d-127c-49f1-aae5-6d66918757de"
+            "b72c5110-967c-499b-b548-c2178d713a68",
+            "715094e4-12a0-4eb2-b697-16f0ed7b0206"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 1556,
+          "duration": 1812,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
