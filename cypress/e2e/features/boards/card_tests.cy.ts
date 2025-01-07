@@ -34,11 +34,29 @@ describe('Funcionalidade de Card', () => {
     })
   })
 
-  it('CT002 - Cenário - Exclusão de um Card no Board do Trello - Teste Positivo', () => {
+  it('CT002 - Cenário - Criação de um novo Card no Board com list_id invalido - Teste Negativo', () => {
+
+    cy.create_a_card(1)
+    .then(response => {
+      expect(response.status).to.equal(400)
+      expect(response.body).to.equal("invalid value for idList")
+    })
+  })
+
+  it('CT003 - Cenário - Exclusão de um Card no Board do Trello - Teste Positivo', () => {
     cy.open_boards()
     cy.delete_card(card_id)
       .then(response => {
         expect(response.status).to.equal(200)
+      })
+  })
+
+  it('CT004 - Cenário - Exclusão de um Card no Board com card_id inexistente - Teste Positivo', () => {
+    cy.open_boards()
+    cy.delete_card(1)
+      .then(response => {
+        expect(response.status).to.equal(400)
+        expect(response.body).to.equal("invalid id")
       })
   })
 

@@ -10,6 +10,7 @@ const idOrganization = `${Cypress.env('idOrganization')}`
 Cypress.Commands.add('create_a_card', list_id  => {
   cy.request({
     method: 'POST',
+    failOnStatusCode: false,
     url: `/1/cards?idList=${list_id}&key=${API_KEY}&token=${API_TOKEN}&name=Automação ${list_id}`
     })
 })
@@ -36,6 +37,7 @@ Cypress.Commands.add('create_a_new_list', _board_id => {
 Cypress.Commands.add('delete_card', _id => {
   cy.request({
     method: 'DELETE',
+    failOnStatusCode: false,
     url: `/1/cards/${_id}?&key=${API_KEY}&token=${API_TOKEN}`,
   })
 })

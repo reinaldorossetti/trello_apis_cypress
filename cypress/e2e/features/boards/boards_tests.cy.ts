@@ -28,7 +28,19 @@ describe('Funcionalidade de Board, que representa o quadro no Trello.', () => {
       })
   })
 
-  it('CT002 - Cenário - Consulta do novo Board criado no Trello - Teste Positivo', () => {
+  it('CT002 - Cenário - Criação de um novo Board no Trello com project name vazio - Teste Negativo', () => {
+    const project = {
+      name: ``,
+    }
+    cy.create_a_board(project)
+      .then(response => {
+        expect(response.status).to.equal(400)
+        expect(response.body.message).to.equal("invalid value for name")
+        expect(response.body.error).to.equal("ERROR")
+      })
+  })
+
+  it('CT003 - Cenário - Consulta do novo Board criado no Trello - Teste Positivo', () => {
 
   cy.get_board(board_id)
       .then(response => {
@@ -40,7 +52,16 @@ describe('Funcionalidade de Board, que representa o quadro no Trello.', () => {
       })
   })
 
-  it('CT003 - Cenário - Update no Board no Trello - Teste Positivo', () => {
+  it('CT004 - Cenário - Consulta do novo Board criado no Trello com board_id invalido - Teste Negativo', () => {
+
+    cy.get_board(0)
+        .then(response => {
+          expect(response.status).to.equal(400)
+          expect(response.body).to.equal("invalid id")
+        })
+    })
+
+  it('CT005 - Cenário - Update no Board no Trello - Teste Positivo', () => {
     var board_name = "Automação Cypress - Trello"
     var description = "Teste de Update no Board"
     
@@ -55,11 +76,31 @@ describe('Funcionalidade de Board, que representa o quadro no Trello.', () => {
         })
     })
 
-  it('CT004 - Cenário - Deletar um Board no Trello - Teste Positivo', () => {
+    it('CT006 - Cenário - Update no Board no Trello com id inválido - Teste Negativo', () => {
+      var board_name = "Automação Cypress - Trello"
+      var description = "Teste de Update no Board"
+      
+      cy.update_board(0, board_name, description)
+          .then(response => {
+            expect(response.status).to.equal(400)
+            expect(response.body).to.equal("invalid id")
+          })
+      })
+
+  it('CT007 - Cenário - Deletar um Board no Trello - Teste Positivo', () => {
     cy.open_boards()
     cy.delete_board(board_id)
       .then(response => {
         expect(response.status).to.equal(200)
+      })
+  })
+
+  it('CT008 - Cenário - Deletar um Board no Trello com um board_id inválido - Teste Negativo', () => {
+    cy.open_boards()
+    cy.delete_board(0)
+      .then(response => {
+        expect(response.status).to.equal(400)
+        expect(response.body).to.equal("invalid id")
       })
   })
 })

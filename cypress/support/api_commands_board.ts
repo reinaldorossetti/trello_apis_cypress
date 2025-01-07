@@ -10,6 +10,7 @@ const idOrganization = `${Cypress.env('idOrganization')}`
 Cypress.Commands.add('create_a_board', _faker => {
   cy.request({
     method: 'POST',
+    failOnStatusCode: false,
     url: `/1/boards/?idOrganization=${idOrganization}&name=${_faker.name}&key=${API_KEY}&token=${API_TOKEN}`,
   })
 })
@@ -34,6 +35,7 @@ Cypress.Commands.add('open_boards', () => {
 Cypress.Commands.add('get_board', _id => {
   cy.request({
     method: 'GET',
+    failOnStatusCode: false,
     url: `/1/boards/${_id}?key=${API_KEY}&token=${API_TOKEN}`,
   })
 })
@@ -47,6 +49,7 @@ Cypress.Commands.add('get_board', _id => {
 Cypress.Commands.add('update_board', (board_id, board_name, description) => {
   cy.request({
     method: 'PUT',
+    failOnStatusCode: false,
     url: `/1/boards/${board_id}?name=${board_name}&key=${API_KEY}&token=${API_TOKEN}&desc=${description}`,
   })
 })
@@ -59,6 +62,7 @@ Cypress.Commands.add('update_board', (board_id, board_name, description) => {
 Cypress.Commands.add('delete_board', _id => {
   cy.request({
     method: 'DELETE',
+    failOnStatusCode: false,
     url: `/1/boards/${_id}?&key=${API_KEY}&token=${API_TOKEN}`,
   })
 })
