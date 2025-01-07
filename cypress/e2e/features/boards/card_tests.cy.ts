@@ -1,5 +1,6 @@
 /// <reference types="cypress" />
 import { faker } from '@faker-js/faker'
+import schema_create_card from "../../../support/schemas/create_card"; // Importe o esquema JSON
 
 // Para criação de um card é necessário passar o id da lista já criada.
 // criei função para criar uma lista e retornar o id da lista. Mas o id do boarding fiz pois o mesmo é limitado.
@@ -27,6 +28,8 @@ describe('Feature Card', () => {
     cy.create_a_card(list_id)
     .then(response => {
       expect(response.status).to.equal(200)
+      // Validar o schema dos dados de retorno do endpoint.
+      expect(response.body).to.be.jsonSchema(schema_create_card);
       card_id = response.body.id
     })
   })

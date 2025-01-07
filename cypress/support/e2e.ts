@@ -22,3 +22,7 @@ import 'cypress-mochawesome-reporter/register';
 Cypress.on('uncaught:exception', (err, runnable) => {
   return false;
 });
+
+// uso do json schema na lib do Chai.
+import chaiJsonSchema from 'chai-json-schema'; 
+chai.use(chaiJsonSchema);

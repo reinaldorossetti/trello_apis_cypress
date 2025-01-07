@@ -1,5 +1,6 @@
 /// <reference types="cypress" />
 import { faker } from '@faker-js/faker'
+import schema_create_board from "../../../support/schemas/create_board"; // Importe o esquema JSON
 
 var board_id = 0
 
@@ -14,6 +15,8 @@ describe('Feature Board', () => {
         expect(response.status).to.equal(200)
         expect(response.body.name).to.equal(project.name)
         board_id = response.body.id
+        // Validar o schema dos dados de retorno do endpoint.
+        expect(response.body).to.be.jsonSchema(schema_create_board);
       })
   })
 
