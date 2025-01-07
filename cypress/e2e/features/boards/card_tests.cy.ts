@@ -9,6 +9,8 @@ import schema_create_card from "../../../support/schemas/create_card"; // Import
 var card_id = 0
 var board_id = "677bdc62b7d77e8c6cbff8e2"
 var list_id = "677bf6c6f04d50086972a5a8"
+const API_TOKEN = `${Cypress.env('ACCESS_TOKEN')}`
+const API_KEY = `${Cypress.env('API_KEY')}`
 
 before(() => {
 
@@ -25,7 +27,7 @@ describe('Funcionalidade de Card', () => {
       expect(response.status).to.equal(200)
       list_id = response.body.id
     })
-    cy.create_a_card(list_id)
+    cy.create_a_card(list_id, API_TOKEN, API_KEY)
     .then(response => {
       expect(response.status).to.equal(200)
       // Validar o schema dos dados de retorno do endpoint.
@@ -34,29 +36,65 @@ describe('Funcionalidade de Card', () => {
     })
   })
 
-  it('CT002 - Cenário - Criação de um novo Card no Board com list_id invalido - Teste Negativo', () => {
+  it('CT002 - Cenário - Criação de um novo Card no Board com list_id inválido - Teste Negativo', () => {
 
-    cy.create_a_card(1)
+    cy.create_a_card(1, API_TOKEN, API_KEY)
     .then(response => {
       expect(response.status).to.equal(400)
       expect(response.body).to.equal("invalid value for idList")
     })
   })
 
-  it('CT003 - Cenário - Exclusão de um Card no Board do Trello - Teste Positivo', () => {
+  it('CT003 - Cenário - Criação de um novo Card no Board com API_TOKEN inválido - Teste Negativo', () => {
+
+    cy.create_a_card(1, 12345, API_KEY)
+    .then(response => {
+      expect(response.status).to.equal(401)
+      expect(response.body).to.equal("invalid app token")
+    })
+  })
+
+  it('CT004 - Cenário - Criação de um novo Card no Board com API_KEY inválido - Teste Negativo', () => {
+
+    cy.create_a_card(1, API_TOKEN, 12345)
+    .then(response => {
+      expect(response.status).to.equal(401)
+      expect(response.body).to.equal("invalid key")
+    })
+  })
+
+  it('CT005 - Cenário - Exclusão de um Card no Board do Trello - Teste Positivo', () => {
     cy.open_boards()
-    cy.delete_card(card_id)
+    cy.delete_card(card_id, API_TOKEN, API_KEY)
       .then(response => {
         expect(response.status).to.equal(200)
       })
   })
 
-  it('CT004 - Cenário - Exclusão de um Card no Board com card_id inexistente - Teste Positivo', () => {
+  it('CT006 - Cenário - Exclusão de um Card no Board com card_id inexistente - Teste Negativo', () => {
     cy.open_boards()
-    cy.delete_card(1)
+    cy.delete_card(1, API_TOKEN, API_KEY)
       .then(response => {
         expect(response.status).to.equal(400)
         expect(response.body).to.equal("invalid id")
+      })
+  })
+
+  it('CT007 - Cenário - Exclusão de um Card no Board com API_TOKEN inválido - Teste Negativo', () => {
+    cy.open_boards()
+    cy.delete_card(1, 12345, API_KEY)
+      .then(response => {
+        expect(response.status).to.equal(401)
+        expect(response.body).to.equal("invalid app token")
+      })
+  })
+
+  it('CT008 - Cenário - Exclusão de um Card no Board com API_KEY inválido - Teste Negativo', () => {
+    cy.open_boards()
+    cy.delete_card(1, API_TOKEN, 123)
+      .then(response => {
+        expect(response.status).to.equal(401)
+        expect(response.body).to.equal("invalid key")
       })
   })
 
