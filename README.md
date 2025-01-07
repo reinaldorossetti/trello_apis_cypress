@@ -116,5 +116,9 @@ npx cypress run --config-file cypress.config.ts
 npx mochawesome-merge ./mochawesome-report/*.json > mochawesomeReport.json
 
 ### Referências:  
-[Cypress](https://www.cypress.io)
-[TypeScript](https://docs.cypress.io/app/tooling/typescript-support)
+[Cypress](https://www.cypress.io)  
+[TypeScript](https://docs.cypress.io/app/tooling/typescript-support)  
+
+### Documentação da API:
+[Trello API Cards](https://developer.atlassian.com/cloud/trello/rest/api-group-cards/#api-group-cards)
+[Trello API Boards](https://developer.atlassian.com/cloud/trello/rest/api-group-boards/#api-group-boards)

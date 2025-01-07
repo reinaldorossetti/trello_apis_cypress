@@ -1,8 +1,9 @@
 const API_TOKEN = `${Cypress.env('ACCESS_TOKEN')}`
 const API_KEY = `${Cypress.env('API_KEY')}`
 const idOrganization = `${Cypress.env('idOrganization')}`
+
 /**
- * Cria um card, passando o id e o nome do card.
+ * Cria um card, passando o id da lista e o nome do card.
  *
  * @type {Object.<int>}
  */
@@ -26,6 +27,12 @@ Cypress.Commands.add('create_a_new_list', _board_id => {
   })
 })
 
+/**
+ * Função deleta o card.
+ * Deve passar o id do card para função.
+ * 
+ * @type {Object.<int>}
+ */
 Cypress.Commands.add('delete_card', _id => {
   cy.request({
     method: 'DELETE',

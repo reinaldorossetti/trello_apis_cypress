@@ -27,6 +27,31 @@ Cypress.Commands.add('open_boards', () => {
 })
 
 /**
+ * Consulta um boarding. Deve passa o id do board criado para função.
+ *
+ * @type {Object.<int>}
+ */
+Cypress.Commands.add('get_board', _id => {
+  cy.request({
+    method: 'GET',
+    url: `/1/boards/${_id}?key=${API_KEY}&token=${API_TOKEN}`,
+  })
+})
+
+
+/**
+ * Atualiza um boarding. Deve passa board_id, board_name, description para a função.
+ *
+ * @type {Object.<void>}
+ */
+Cypress.Commands.add('update_board', (board_id, board_name, description) => {
+  cy.request({
+    method: 'PUT',
+    url: `/1/boards/${board_id}?name=${board_name}&key=${API_KEY}&token=${API_TOKEN}&desc=${description}`,
+  })
+})
+
+/**
  * Deleta um board, passando o id do board criado para função.
  *
  * @type {Object.<string>}

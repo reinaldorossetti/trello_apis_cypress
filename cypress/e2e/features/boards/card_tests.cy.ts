@@ -16,8 +16,8 @@ before(() => {
 
 })
 
-describe('Feature Card', () => {
-  it('Validated new Card', () => {
+describe('Funcionalidade de Card', () => {
+  it('CT001 - Cenário - Criação de um novo Card no Board do Trello - Teste Positivo', () => {
 
     
     cy.create_a_new_list(board_id)
@@ -34,7 +34,7 @@ describe('Feature Card', () => {
     })
   })
 
-  it('Validated delete Card', () => {
+  it('CT002 - Cenário - Exclusão de um Card no Board do Trello - Teste Positivo', () => {
     cy.open_boards()
     cy.delete_card(card_id)
       .then(response => {

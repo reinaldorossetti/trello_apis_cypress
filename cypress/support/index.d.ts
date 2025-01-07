@@ -8,5 +8,8 @@ declare namespace Cypress {
     delete_card(_id: any): Chainable<any>;
     create_a_card(list_id: any): Chainable<any>;
     create_a_new_list(_board_id: any): Chainable<any>;
+    get_board(_id: any): Chainable<any>;
+    update_board(board_id:any, board_name: any, description: any): Chainable<any>;
+    
   }
 }
