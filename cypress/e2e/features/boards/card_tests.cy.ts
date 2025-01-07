@@ -13,20 +13,17 @@ const API_TOKEN = `${Cypress.env('ACCESS_TOKEN')}`
 const API_KEY = `${Cypress.env('API_KEY')}`
 
 before(() => {
-
   cy.open_boards()
-
+  cy.create_a_new_list(board_id, API_TOKEN, API_KEY)
+  .then(response => {
+    expect(response.status).to.equal(200)
+    list_id = response.body.id
+  })
 })
 
 describe('Funcionalidade de Card', () => {
   it('CT001 - Cenário - Criação de um novo Card no Board do Trello - Teste Positivo', () => {
 
-    
-    cy.create_a_new_list(board_id)
-    .then(response => {
-      expect(response.status).to.equal(200)
-      list_id = response.body.id
-    })
     cy.create_a_card(list_id, API_TOKEN, API_KEY)
     .then(response => {
       expect(response.status).to.equal(200)

@@ -1,7 +1,3 @@
-const API_TOKEN = `${Cypress.env('ACCESS_TOKEN')}`
-const API_KEY = `${Cypress.env('API_KEY')}`
-const idOrganization = `${Cypress.env('idOrganization')}`
-
 /**
  * Cria um card, passando o id da lista e o nome do card.
  *
@@ -21,7 +17,7 @@ Cypress.Commands.add('create_a_card', (list_id, API_TOKEN, API_KEY)  => {
  * 
  * @type {Object.<int>}
  */
-Cypress.Commands.add('create_a_new_list', _board_id => {
+Cypress.Commands.add('create_a_new_list', (_board_id, API_TOKEN, API_KEY) => {
   cy.request({
     method: 'POST',
     url: `1/lists?idBoard=${_board_id}&key=${API_KEY}&token=${API_TOKEN}&name=Automação`,
