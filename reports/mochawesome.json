@@ -5,9 +5,9 @@
     "passes": 2,
     "pending": 0,
     "failures": 0,
-    "start": "2025-01-07T15:35:25.422Z",
-    "end": "2025-01-07T15:35:27.334Z",
-    "duration": 1912,
+    "start": "2025-01-07T15:38:54.803Z",
+    "end": "2025-01-07T15:38:56.671Z",
+    "duration": 1868,
     "testsRegistered": 2,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "8ab8ab56-8732-468b-807b-d979c071090d",
+      "uuid": "33be7d1b-3768-4f3e-bc13-86d5d3d3e45d",
       "title": "",
       "fullFile": "cypress/e2e/features/boards/boards_tests.cy.ts",
       "file": "cypress/e2e/features/boards/boards_tests.cy.ts",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "bb5af921-98b4-441c-8e6c-0ff0817c53f8",
+          "uuid": "2f03785c-ceb6-4cf0-beb9-0fd52691f36f",
           "title": "Feature Board",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "Validated new Board",
               "fullTitle": "Feature Board Validated new Board",
               "timedOut": null,
-              "duration": 472,
+              "duration": 476,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -47,8 +47,8 @@
               "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"cypress/e2e/features/boards/boards_tests.cy.ts\"\n}",
               "code": "const project = {\n    name: `${_faker_js_faker__WEBPACK_IMPORTED_MODULE_1__.a.company.name()}`,\n};\ncy.create_a_board(project)\n    .then(response => {\n    expect(response.status).to.equal(200);\n    expect(response.body.name).to.equal(project.name);\n    board_id = response.body.id;\n    // Validar o schema dos dados de retorno do endpoint.\n    expect(response.body).to.be.jsonSchema(_support_schemas_create_board__WEBPACK_IMPORTED_MODULE_0__[\"default\"]);\n});",
               "err": {},
-              "uuid": "70c2c6b1-2ed7-4049-aab5-a79585005701",
-              "parentUUID": "bb5af921-98b4-441c-8e6c-0ff0817c53f8",
+              "uuid": "f3dd92d9-810d-447a-8f74-f6e3eefa134d",
+              "parentUUID": "2f03785c-ceb6-4cf0-beb9-0fd52691f36f",
               "isHook": false,
               "skipped": false
             },
@@ -56,7 +56,7 @@
               "title": "Validated delete Board",
               "fullTitle": "Feature Board Validated delete Board",
               "timedOut": null,
-              "duration": 1419,
+              "duration": 1375,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -65,21 +65,21 @@
               "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"cypress/e2e/features/boards/boards_tests.cy.ts\"\n}",
               "code": "cy.open_boards();\ncy.delete_board(board_id)\n    .then(response => {\n    expect(response.status).to.equal(200);\n});",
               "err": {},
-              "uuid": "7f2853fe-8886-4b11-921b-ab5e1af42ccf",
-              "parentUUID": "bb5af921-98b4-441c-8e6c-0ff0817c53f8",
+              "uuid": "39173ea5-6718-4e8b-915c-7c0224a104ce",
+              "parentUUID": "2f03785c-ceb6-4cf0-beb9-0fd52691f36f",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "70c2c6b1-2ed7-4049-aab5-a79585005701",
-            "7f2853fe-8886-4b11-921b-ab5e1af42ccf"
+            "f3dd92d9-810d-447a-8f74-f6e3eefa134d",
+            "39173ea5-6718-4e8b-915c-7c0224a104ce"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 1891,
+          "duration": 1851,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
