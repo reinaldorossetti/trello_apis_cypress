@@ -3,11 +3,11 @@
  *
  * @type {Object.<int>}
  */
-Cypress.Commands.add('create_a_card', (list_id, API_TOKEN, API_KEY)  => {
+Cypress.Commands.add('create_a_card', (list_id, nome_card, API_TOKEN, API_KEY)  => {
   cy.request({
     method: 'POST',
     failOnStatusCode: false,
-    url: `/1/cards?idList=${list_id}&key=${API_KEY}&token=${API_TOKEN}&name=Automação ${list_id}`
+    url: `/1/cards?idList=${list_id}&key=${API_KEY}&token=${API_TOKEN}&name=${nome_card}`
     })
 })
 
