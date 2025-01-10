@@ -13,7 +13,7 @@ export default defineConfig({
     "json": true,
   },
   env: {
-    allure: true,
+    allure: false,
     video: false,
   },
   

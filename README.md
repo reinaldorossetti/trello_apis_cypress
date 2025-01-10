@@ -110,15 +110,19 @@ testada.
 ```
 
 ### Em casos de erro de certificado.
-npm config set strict-ssl false  
-NODE_TLS_REJECT_UNAUTHORIZED=0 cypress run --env allure=true --env video=true --reporter mochawesome  
-npx cypress run --config-file cypress.config.ts
-npx mochawesome-merge ./mochawesome-report/*.json > mochawesomeReport.json
+npm config set strict-ssl false    
+NODE_TLS_REJECT_UNAUTHORIZED=0 cypress run --env allure=true --env video=true --reporter mochawesome    
+npx cypress run --config-file cypress.config.ts  
+npx mochawesome-merge ./mochawesome-report/*.json > mochawesomeReport.json  
 
 ### Referências:  
+Referências sobre o framework utilizado nos testes.
 [Cypress](https://www.cypress.io)  
 [TypeScript](https://docs.cypress.io/app/tooling/typescript-support)  
 
-### Documentação da API:
-[Trello API Cards](https://developer.atlassian.com/cloud/trello/rest/api-group-cards/#api-group-cards)
+Ferramenta converte o retorno da request em json schema:  
+[Schema Tools](https://www.jsonschema.net/app/schemas/0)  
+
+### Documentação da API:  
+[Trello API Cards](https://developer.atlassian.com/cloud/trello/rest/api-group-cards/#api-group-cards)  
 [Trello API Boards](https://developer.atlassian.com/cloud/trello/rest/api-group-boards/#api-group-boards)

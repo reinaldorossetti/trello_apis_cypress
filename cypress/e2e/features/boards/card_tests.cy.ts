@@ -1,11 +1,13 @@
 /// <reference types="cypress" />
 import { faker } from '@faker-js/faker'
 import schema_create_card from "../../../support/schemas/create_card"; // Importe o esquema JSON
+import schema_get_card from "../../../support/schemas/get_card"; // Importe o esquema JSON
 
 // Para criação de um card é necessário passar o id da lista já criada.
 // criei função para criar uma lista e retornar o id da lista. Mas o id do boarding está fixo pois o mesmo é limitado.
 // "message": "Cannot create board as organization is at its board limit"
 
+// Variáveis globais, estão fora do escopo do teste. Em caso de falha, a variável não é resetada.
 var card_id = 0
 var list_id = "677bf6c6f04d50086972a5a8"
 const BOARD_ID = "677bdc62b7d77e8c6cbff8e2"
@@ -46,6 +48,27 @@ describe('Funcionalidade de Card', () => {
       expect(response.body).to.equal("invalid value for idList")
     })
   })
+
+  it('CT003 - Cenário - Consulta Card criado no Trello - Teste Positivo', () => {
+
+    cy.get_card(card_id, API_TOKEN, API_KEY)
+        .then(response => {
+          expect(response.status).to.equal(200)
+          expect(response.body.name).to.equal(nome_card)
+          expect(response.body.id).to.eq(card_id); // Validar se o id do board tem 24 caracteres.
+          // Validar o schema dos dados de retorno do endpoint.
+          expect(response.body).to.be.jsonSchema(schema_get_card);
+        })
+    })
+  
+  it('CT004 - Cenário - Consulta um Card criado no Trello com card_id invalido - Teste Negativo', () => {
+
+    cy.get_card(0, API_TOKEN, API_KEY)
+        .then(response => {
+          expect(response.status).to.equal(400)
+          expect(response.body).to.equal("invalid id")
+        })
+    })
 
   it('CT003 - Cenário - Criação de um novo Card no Board com API_TOKEN inválido - Teste Negativo', () => {
 

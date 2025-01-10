@@ -10,6 +10,7 @@ declare namespace Cypress {
     create_a_new_list(_board_id: any, API_TOKEN: any, API_KEY: any): Chainable<any>;
     get_board(_id: any): Chainable<any>;
     update_board(board_id:any, board_name: any, description: any): Chainable<any>;
+    get_card(_id: number, API_TOKEN: string, API_KEY: string): Chainable<any>;
     
   }
 }

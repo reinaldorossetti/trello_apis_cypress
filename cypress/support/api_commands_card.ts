@@ -1,7 +1,7 @@
 /**
- * Cria um card, passando o id da lista e o nome do card.
+ * Cria um card, passando o id da lista e o nome do card, API_TOKEN, API_KEY.
  *
- * @type {Object.<int>}
+ * @type {Object.<int, string, string, string>}
  */
 Cypress.Commands.add('create_a_card', (list_id, nome_card, API_TOKEN, API_KEY)  => {
   cy.request({
@@ -12,10 +12,23 @@ Cypress.Commands.add('create_a_card', (list_id, nome_card, API_TOKEN, API_KEY)  
 })
 
 /**
+ * Consulta um Card. Deve passa o id do board, API_TOKEN, API_KEY para função. criado para função.
+ *
+ * @type {Object.<number, string, string>}
+ */
+Cypress.Commands.add('get_card', (_id, API_TOKEN, API_KEY) => {
+  cy.request({
+    method: 'GET',
+    failOnStatusCode: false,
+    url: `/1/cards/${_id}?key=${API_KEY}&token=${API_TOKEN}`,
+  })
+})
+
+/**
  * Crie uma nova lista em um quadro. É necessario para criar um card.
- * Deve passar o id do board para função.
+ * Deve passar o id do board, API_TOKEN, API_KEY para função.
  * 
- * @type {Object.<int>}
+ * @type {Object.<number, string, string>}
  */
 Cypress.Commands.add('create_a_new_list', (_board_id, API_TOKEN, API_KEY) => {
   cy.request({
@@ -26,14 +39,14 @@ Cypress.Commands.add('create_a_new_list', (_board_id, API_TOKEN, API_KEY) => {
 
 /**
  * Função deleta o card.
- * Deve passar o id do card para função.
+ * Deve passar o id do card, API_TOKEN, API_KEY para função.
  * 
- * @type {Object.<int>}
+ * @type {Object.<number, string, string>}
  */
-Cypress.Commands.add('delete_card', (_id, _API_TOKEN, API_KEY) => {
+Cypress.Commands.add('delete_card', (_id, API_TOKEN, API_KEY) => {
   cy.request({
     method: 'DELETE',
     failOnStatusCode: false,
-    url: `/1/cards/${_id}?&key=${API_KEY}&token=${_API_TOKEN}`,
+    url: `/1/cards/${_id}?&key=${API_KEY}&token=${API_TOKEN}`,
   })
 })
