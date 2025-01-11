@@ -1,5 +1,3 @@
-const API_TOKEN = `${Cypress.env('ACCESS_TOKEN')}`
-const API_KEY = `${Cypress.env('API_KEY')}`
 const idOrganization = `${Cypress.env('idOrganization')}`
 
 /**
@@ -7,7 +5,7 @@ const idOrganization = `${Cypress.env('idOrganization')}`
  *
  * @type {Object.<string>}
  */
-Cypress.Commands.add('create_a_board', _faker => {
+Cypress.Commands.add('create_a_board', (_faker, API_TOKEN, API_KEY) => {
   cy.request({
     method: 'POST',
     failOnStatusCode: false,
@@ -20,7 +18,7 @@ Cypress.Commands.add('create_a_board', _faker => {
  *
  * @type {Object.<void>}
  */
-Cypress.Commands.add('open_boards', () => {
+Cypress.Commands.add('open_boards', (API_TOKEN, API_KEY) => {
   cy.request({
     method: 'GET',
     url: `/1/members/me?boards=open&key=${API_KEY}&token=${API_TOKEN}`,
@@ -32,7 +30,7 @@ Cypress.Commands.add('open_boards', () => {
  *
  * @type {Object.<int>}
  */
-Cypress.Commands.add('get_board', _id => {
+Cypress.Commands.add('get_board', (_id, API_TOKEN, API_KEY) => {
   cy.request({
     method: 'GET',
     failOnStatusCode: false,
@@ -46,7 +44,7 @@ Cypress.Commands.add('get_board', _id => {
  *
  * @type {Object.<void>}
  */
-Cypress.Commands.add('update_board', (board_id, board_name, description) => {
+Cypress.Commands.add('update_board', (board_id, board_name, description, API_TOKEN, API_KEY) => {
   cy.request({
     method: 'PUT',
     failOnStatusCode: false,
@@ -59,7 +57,7 @@ Cypress.Commands.add('update_board', (board_id, board_name, description) => {
  *
  * @type {Object.<string>}
  */
-Cypress.Commands.add('delete_board', _id => {
+Cypress.Commands.add('delete_board', (_id, API_TOKEN, API_KEY) => {
   cy.request({
     method: 'DELETE',
     failOnStatusCode: false,

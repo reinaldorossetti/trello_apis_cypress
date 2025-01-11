@@ -38,6 +38,19 @@ Cypress.Commands.add('create_a_new_list', (_board_id, API_TOKEN, API_KEY) => {
 })
 
 /**
+ * Atualiza um Card no Trello. Deve passa card_id, card_name, description para a função.
+ *
+ * @type {Object.<void>}
+ */
+Cypress.Commands.add('update_card', (card_id, card_name, description, API_TOKEN, API_KEY) => {
+  cy.request({
+    method: 'PUT',
+    failOnStatusCode: false,
+    url: `/1/cards/${card_id}?name=${card_name}&key=${API_KEY}&token=${API_TOKEN}&desc=${description}`,
+  })
+})
+
+/**
  * Função deleta o card.
  * Deve passar o id do card, API_TOKEN, API_KEY para função.
  * 
