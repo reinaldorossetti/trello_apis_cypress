@@ -115,10 +115,10 @@ jobs:
         with:
           name: html-report
           path: mochawesome-report/
-    # - name: Deploy
-    #   uses: peaceiris/actions-gh-pages@v3
-    #   with:
-    #     github_token: ${{ secrets.GITHUB_TOKEN }}
-    #     publish_branch: gh-pages  # default: gh-pages
-    #     publish_dir: mochawesome-report
-    #     destination_dir: reports
+      - name: Deploy reports
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages  # default: gh-pages
+          publish_dir: mochawesome-report
+          destination_dir: reports
