@@ -72,6 +72,10 @@ Para exibir Cypress:
 ```sh
 npm run open
 ```
+Para exibir o Report:
+```sh
+npm run report
+```
 
 As variáveis por ambiente estão definidos dentro dos arquivos cypress.config.ts
 
