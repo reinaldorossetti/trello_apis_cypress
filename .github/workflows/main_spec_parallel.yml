@@ -84,15 +84,35 @@ jobs:
     runs-on: ubuntu-22.04
     needs: [cypress-run-boards-tests, cypress-run02-card-tests]
     steps:
-    - uses: actions/setup-node@v3
-      if: always()
-      continue-on-error: true
-      with:
-        node-version: '18'
-    - name: Step 4 - Roda o report
-      run: |
-        npm run npx mochawesome-merge ./mochawesome-report/*.json > mochawesomeReport.json && npx marge ./mochawesomeReport.json
-        ls -la mochawesome-report
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Download Feature A Report
+        uses: actions/download-artifact@v2
+        with:
+          name: boards-tests
+          path: ./mochawesome-report
+
+      - name: Download Feature B Report
+        uses: actions/download-artifact@v2
+        with:
+          name: card-tests
+          path: ./mochawesome-report
+
+      - uses: actions/setup-node@v3
+        if: always()
+        continue-on-error: true
+        with:
+          node-version: '18'
+      - name: Step 4 - Roda o report
+        run: |
+          npm run npx mochawesome-merge ./mochawesome-report/*.json > mochawesomeReport.json && npx marge ./mochawesomeReport.json
+          ls -la mochawesome-report
+      - name: 🎁 Step 5 - mochawesome-report.html
+        uses: actions/upload-artifact@v4
+        with:
+          name: html-report
+          path: mochawesome-report/
     # - name: Deploy
     #   uses: peaceiris/actions-gh-pages@v3
     #   with:
