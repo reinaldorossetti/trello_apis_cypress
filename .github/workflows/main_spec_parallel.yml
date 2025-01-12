@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 permissions: write-all
 jobs:
-  cypress-run-boards_tests:
+  cypress-run-boards-tests:
     runs-on: ubuntu-22.04
     steps:
     - name: Checkout
@@ -33,7 +33,7 @@ jobs:
         ACCESS_TOKEN: "${{ secrets.ACCESS_TOKEN }}"
         API_KEY: "${{ secrets.API_KEY }}"
              
-  cypress-run02_card_tests:
+  cypress-run02-card-tests:
     runs-on: ubuntu-22.04
     steps:
     - name: Checkout
@@ -61,7 +61,7 @@ jobs:
     
   cypress-report:
     runs-on: ubuntu-22.04
-    needs: [cypress-run01, cypress-run02]
+    needs: [cypress-run-boards-tests, cypress-run02-card-tests]
     steps:
     - uses: actions/setup-node@v3
       if: always()
