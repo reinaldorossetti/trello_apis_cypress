@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 permissions: write-all
 jobs:
-  cypress-run01:
+  cypress-run-boards_tests:
     runs-on: ubuntu-22.04
     steps:
     - name: Checkout
@@ -32,14 +32,8 @@ jobs:
       env:  
         ACCESS_TOKEN: "${{ secrets.ACCESS_TOKEN }}"
         API_KEY: "${{ secrets.API_KEY }}"
-    
-    - name: 🎁 Step 5 - mochawesome-report.html
-      uses: actions/upload-artifact@v4
-      with:
-        name: mochawesome-report
-        path: mochawesome-report/
-         
-  cypress-run02:
+             
+  cypress-run02_card_tests:
     runs-on: ubuntu-22.04
     steps:
     - name: Checkout
@@ -65,12 +59,6 @@ jobs:
         ACCESS_TOKEN: "${{ secrets.ACCESS_TOKEN }}"
         API_KEY: "${{ secrets.API_KEY }}"
     
-    - name: 🎁 Step 5 - mochawesome-report.html
-      uses: actions/upload-artifact@v4
-      with:
-        name: mochawesome-report
-        path: mochawesome-report/
-
   cypress-report:
     runs-on: ubuntu-22.04
     needs: [cypress-run01, cypress-run02]
