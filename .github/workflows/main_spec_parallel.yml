@@ -44,7 +44,7 @@ jobs:
         name: boards-tests
         path: mochawesome-report/
              
-  cypress-run02-card-tests:
+  cypress-run-card-tests:
     runs-on: ubuntu-22.04
     steps:
     - name: Checkout
@@ -82,7 +82,7 @@ jobs:
     
   cypress-report:
     runs-on: ubuntu-22.04
-    needs: [cypress-run-boards-tests, cypress-run02-card-tests]
+    needs: [cypress-run-boards-tests, cypress-run-card-tests]
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
