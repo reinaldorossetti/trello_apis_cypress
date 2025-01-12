@@ -11,6 +11,8 @@ export default defineConfig({
     "html": false,
     // generate intermediate JSON reports
     "json": true,
+    reportFilename: "[status]_[datetime]-[name]-report",
+    timestamp: "longDate"
   },
   env: {
     allure: false,

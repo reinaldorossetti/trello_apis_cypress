@@ -58,6 +58,16 @@ jobs:
       env:  
         ACCESS_TOKEN: "${{ secrets.ACCESS_TOKEN }}"
         API_KEY: "${{ secrets.API_KEY }}"
+    - name: Step 4 - Roda o report
+      run: |
+        ls -la mochawesome-report
+        npm run report
+        ls -la mochawesome-report
+    - name: 🎁 Step 5 - mochawesome-report.html
+      uses: actions/upload-artifact@v4
+      with:
+        name: mochawesome-report
+        path: mochawesome-report/
     
   cypress-report:
     runs-on: ubuntu-22.04
