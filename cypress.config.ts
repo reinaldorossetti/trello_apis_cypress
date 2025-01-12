@@ -28,7 +28,7 @@ export default defineConfig({
     },
     // Para setar o caminho dos testes.
     specPattern: [
-      "cypress/e2e/features/**/*.cy.ts",
+      "cypress/e2e/features/*.cy.ts",
       "*_tests.cy.ts"
    ],
   },
