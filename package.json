@@ -5,22 +5,22 @@
     "report": "npx mochawesome-merge ./mochawesome-report/*.json > mochawesomeReport.json && npx marge ./mochawesomeReport.json"
   },
   "dependencies": {
-    "@cypress/code-coverage": "3.10.4",
-    "@types/chai": "^5.0.1",
-    "@types/chai-json-schema": "^1.4.10",
-    "chai": "^4.5.0",
-    "cypress": "^12.17.4"
+    "@types/chai": "5.0.1",
+    "@types/chai-json-schema": "1.4.10",
+    "chai-json-schema": "1.5.1",
+    "cypress": "12.17.4",
+    "@faker-js/faker": "9.3.0",
+    "typescript": "5.3.3"
   },
   "devDependencies": {
-    "@faker-js/faker": "^9.3.0",
-    "chai-json-schema": "^1.5.1",
     "cypress-mochawesome-reporter": "3.8.2",
     "mocha": "9.1.3",
-    "mochawesome-merge": "^4.3.0",
+    "mochawesome-merge": "4.3.0",
     "ts-loader": "^9.5.1",
-    "typescript": "^5.3.3",
     "cross-spawn": ">=7.0.5",
-    "braces": ">=3.0.3"
+    "braces": ">=3.0.3",
+    "glob": "^7.1.7",
+    "inflight": "^1.0.6"
   },
   "name": "trello_apis_cypress",
   "description": "Testes de API com Cypress em TypeScript, e Allure fornece o relatório dos testes.",

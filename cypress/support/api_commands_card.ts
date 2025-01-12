@@ -1,7 +1,7 @@
 /**
  * Cria um card, passando o id da lista e o nome do card, API_TOKEN, API_KEY.
  *
- * @type {Object.<int, string, string, string>}
+ * @type {Object.<number, string, string, string>}
  */
 Cypress.Commands.add('create_a_card', (list_id, nome_card, API_TOKEN, API_KEY)  => {
   cy.request({
@@ -12,7 +12,8 @@ Cypress.Commands.add('create_a_card', (list_id, nome_card, API_TOKEN, API_KEY)  
 })
 
 /**
- * Consulta um Card. Deve passa o id do board, API_TOKEN, API_KEY para função. criado para função.
+ * Consulta um Card. 
+ * Deve passa o id do board, API_TOKEN, API_KEY criado para função.
  *
  * @type {Object.<number, string, string>}
  */
@@ -38,9 +39,10 @@ Cypress.Commands.add('create_a_new_list', (_board_id, API_TOKEN, API_KEY) => {
 })
 
 /**
- * Atualiza um Card no Trello. Deve passa card_id, card_name, description para a função.
+ * Atualiza um Card no Trello. 
+ * Deve passa card_id, card_name, description, API_TOKEN, API_KEY para a função.
  *
- * @type {Object.<void>}
+ * @type {Object.<number, string, string, string, string>}
  */
 Cypress.Commands.add('update_card', (card_id, card_name, description, API_TOKEN, API_KEY) => {
   cy.request({
@@ -51,7 +53,7 @@ Cypress.Commands.add('update_card', (card_id, card_name, description, API_TOKEN,
 })
 
 /**
- * Função deleta o card.
+ * Função deleta o card em um board.
  * Deve passar o id do card, API_TOKEN, API_KEY para função.
  * 
  * @type {Object.<number, string, string>}
