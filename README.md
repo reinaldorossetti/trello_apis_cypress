@@ -18,8 +18,10 @@
 ---
 
 ### Pré-requisitos
-
-- [Git](https://git-scm.com/download/) e [Node.js](https://nodejs.org/en/download/) instalados.
+Ferramentas para instalação, Vs-Code a ultima versão vem com o copiloto embutido:
+- [Git](https://git-scm.com/download/)
+- [Node.js](https://nodejs.org/en/download/)
+- [VS-Code](https://code.visualstudio.com/)
 
 ## Antes de clonar ou executar esse projeto localmente no computador, é necessário ter os pré-requisitos e seguir as instruções abaixo :point_down:
 
