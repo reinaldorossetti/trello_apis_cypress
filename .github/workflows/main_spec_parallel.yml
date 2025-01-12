@@ -1,0 +1,100 @@
+name: API tests
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+permissions: write-all
+jobs:
+  cypress-run01:
+    runs-on: ubuntu-22.04
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+    - uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+    - name: Step 1 - Install dependencies
+      run: |
+        npm install
+    - name: Step 2 - Write the cypress.env.json file 📝
+      run: |
+          echo '${{ secrets.CYPRESS_ENV_CI }}' > cypress.env.json
+
+    - name: Step 3 - Cypress run
+      uses: cypress-io/github-action@v6
+      if: always()
+      continue-on-error: true
+      with:
+        spec: cypress/e2e/features/boards_tests.cy.ts
+        record: false
+      env:  
+        ACCESS_TOKEN: "${{ secrets.ACCESS_TOKEN }}"
+        API_KEY: "${{ secrets.API_KEY }}"
+    
+    - name: 🎁 Step 5 - mochawesome-report.html
+      uses: actions/upload-artifact@v4
+      with:
+        name: mochawesome-report
+        path: mochawesome-report/
+         
+  cypress-run02:
+    runs-on: ubuntu-22.04
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+    - uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+    - name: Step 1 - Install dependencies
+      run: |
+        npm install
+    - name: Step 2 - Write the cypress.env.json file 📝
+      run: |
+          echo '${{ secrets.CYPRESS_ENV_CI }}' > cypress.env.json
+
+    - name: Step 3 - Cypress run
+      uses: cypress-io/github-action@v6
+      if: always()
+      continue-on-error: true
+      with:
+        spec: cypress/e2e/features/card_tests.cy.ts
+        record: false
+      env:  
+        ACCESS_TOKEN: "${{ secrets.ACCESS_TOKEN }}"
+        API_KEY: "${{ secrets.API_KEY }}"
+    
+    - name: 🎁 Step 5 - mochawesome-report.html
+      uses: actions/upload-artifact@v4
+      with:
+        name: mochawesome-report
+        path: mochawesome-report/
+
+  cypress-report:
+    runs-on: ubuntu-22.04
+    needs: [cypress-run01, cypress-run02]
+    steps:
+    - uses: actions/setup-node@v3
+      if: always()
+      continue-on-error: true
+      with:
+        node-version: '18'
+    - name: Step 4 - Roda o report
+      run: |
+        ls -la mochawesome-report
+        npm run report
+        ls -la mochawesome-report
+    - name: 🎁 Step 5 - mochawesome-report.html
+      uses: actions/upload-artifact@v4
+      with:
+        name: mochawesome-report
+        path: mochawesome-report/
+    
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_branch: gh-pages  # default: gh-pages
+        publish_dir: mochawesome-report
+        destination_dir: reports
