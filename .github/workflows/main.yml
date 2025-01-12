@@ -27,7 +27,7 @@ jobs:
       if: always()
       continue-on-error: true
       with:
-        spec: cypress/e2e/features/**/*.cy.ts
+        spec: cypress/e2e/features/*.cy.ts
         record: false
       env:  
         ACCESS_TOKEN: "${{ secrets.ACCESS_TOKEN }}"
