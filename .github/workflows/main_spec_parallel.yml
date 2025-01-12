@@ -107,6 +107,7 @@ jobs:
       - name: Step 4 - Roda o report
         continue-on-error: true
         run: |
+          npm install
           npm run report
           ls -la mochawesome-report
       - name: 🎁 Step 5 - mochawesome-report.html
