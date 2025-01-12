@@ -41,8 +41,8 @@ jobs:
       uses: actions/upload-artifact@v4
       continue-on-error: true
       with:
-        name: mochawesome-report
-        path: boards_tests/
+        name: boards_tests
+        path: mochawesome-report/
              
   cypress-run02-card-tests:
     runs-on: ubuntu-22.04
@@ -77,8 +77,8 @@ jobs:
     - name: 🎁 Step 5 - mochawesome-report.html
       uses: actions/upload-artifact@v4
       with:
-        name: mochawesome-report
-        path: card_tests/
+        name: card_tests/
+        path: mochawesome-report/
     
   cypress-report:
     runs-on: ubuntu-22.04
