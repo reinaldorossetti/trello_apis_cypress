@@ -32,14 +32,9 @@ jobs:
       env:  
         ACCESS_TOKEN: "${{ secrets.ACCESS_TOKEN }}"
         API_KEY: "${{ secrets.API_KEY }}"
-    - name: Step 4 - Roda o report
-      continue-on-error: true
-      run: |
-        ls -la mochawesome-report
-        npm run report
-        ls -la mochawesome-report
     - name: 🎁 Step 5 - mochawesome-report.html
       uses: actions/upload-artifact@v4
+      continue-on-error: true
       with:
         name: mochawesome-report
         path: mochawesome-report/
@@ -69,9 +64,14 @@ jobs:
       env:  
         ACCESS_TOKEN: "${{ secrets.ACCESS_TOKEN }}"
         API_KEY: "${{ secrets.API_KEY }}"
+    - name: Step 4 - Roda o report
+      continue-on-error: true
+      run: |
+        ls -la mochawesome-report
+        npm run report
+        ls -la mochawesome-report
     - name: 🎁 Step 5 - mochawesome-report.html
       uses: actions/upload-artifact@v4
-      continue-on-error: true
       with:
         name: mochawesome-report
         path: mochawesome-report/
