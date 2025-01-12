@@ -85,16 +85,16 @@ jobs:
     needs: [cypress-run-boards-tests, cypress-run02-card-tests]
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Download Feature A Report
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v4
         with:
           name: boards-tests
           path: ./mochawesome-report
 
       - name: Download Feature B Report
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v4
         with:
           name: card-tests
           path: ./mochawesome-report
