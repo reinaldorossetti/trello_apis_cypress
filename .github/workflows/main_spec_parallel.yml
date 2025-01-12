@@ -41,7 +41,7 @@ jobs:
       uses: actions/upload-artifact@v4
       continue-on-error: true
       with:
-        name: boards_tests
+        name: boards-tests
         path: mochawesome-report/
              
   cypress-run02-card-tests:
@@ -77,7 +77,7 @@ jobs:
     - name: 🎁 Step 5 - mochawesome-report.html
       uses: actions/upload-artifact@v4
       with:
-        name: card_tests/
+        name: card-tests
         path: mochawesome-report/
     
   cypress-report:
