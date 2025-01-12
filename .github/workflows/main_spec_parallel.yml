@@ -91,13 +91,13 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: boards-tests
-          path: ./mochawesome-report/boards-tests
+          path: ./mochawesome-report/
 
       - name: Download Feature B Report
         uses: actions/download-artifact@v4
         with:
           name: card-tests
-          path: ./mochawesome-report/card-tests
+          path: ./mochawesome-report/
 
       - uses: actions/setup-node@v3
         if: always()
@@ -105,8 +105,9 @@ jobs:
         with:
           node-version: '18'
       - name: Step 4 - Roda o report
+        continue-on-error: true
         run: |
-          npm run npx mochawesome-merge ./mochawesome-report/**/*.json > ./mochawesome-report/mochawesomeReport.json && npx marge ./mochawesome-report/mochawesomeReport.json
+          npm run report
           ls -la mochawesome-report
       - name: 🎁 Step 5 - mochawesome-report.html
         uses: actions/upload-artifact@v4
