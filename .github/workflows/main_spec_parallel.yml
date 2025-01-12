@@ -1,4 +1,4 @@
-name: API tests
+name: API tests Parallel for Spec.
 on:
   push:
     branches: [ main ]
