@@ -1,7 +1,7 @@
 /// <reference types="cypress" />
 import { faker } from '@faker-js/faker'
-import schema_create_board from "../../../support/schemas/create_board"; // Importe o esquema JSON
-import schema_get_board from "../../../support/schemas/get_board"; // Importe o esquema JSON
+import schema_create_board from "../../support/schemas/create_board"; // Importe o esquema JSON
+import schema_get_board from "../../support/schemas/get_board"; // Importe o esquema JSON
 
 // Variáveis globais, estão fora do escopo do teste. Em caso de falha, a variável não é resetada.
 var board_id = 0

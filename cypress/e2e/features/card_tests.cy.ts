@@ -1,7 +1,7 @@
 /// <reference types="cypress" />
 import { faker } from '@faker-js/faker'
-import schema_create_card from "../../../support/schemas/create_card"; // Importe o esquema JSON
-import schema_get_card from "../../../support/schemas/get_card"; // Importe o esquema JSON
+import schema_create_card from "../../support/schemas/create_card"; // Importe o esquema JSON
+import schema_get_card from "../../support/schemas/get_card"; // Importe o esquema JSON
 
 // Para criação de um card é necessário passar o id da lista já criada.
 // criei função para criar uma lista e retornar o id da lista. Mas o id do boarding está fixo pois o mesmo é limitado.
