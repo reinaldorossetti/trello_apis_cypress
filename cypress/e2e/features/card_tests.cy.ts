@@ -57,7 +57,7 @@ describe('Funcionalidade de Card', () => {
       .then(response => {
         expect(response.status).to.equal(200)
         expect(response.body.name).to.equal(nome_card)
-        expect(response.body.id).to.eq(card_id); // Validar se o id do board tem 24 caracteres.
+        expect(response.body.id).to.eq(card_id);
         // Validar o schema dos dados de retorno do endpoint.
         expect(response.body).to.be.jsonSchema(schema_get_card);
       })
@@ -98,7 +98,7 @@ describe('Funcionalidade de Card', () => {
         expect(response.status).to.equal(200)
         expect(response.body.name).to.equal(board_name)
         expect(response.body.desc).to.equal(description)
-        expect(response.body.id).to.eq(card_id); // Validar se o id do board tem 24 caracteres.
+        expect(response.body.id).to.eq(card_id); 
         // Validar o schema dos dados de retorno do endpoint.
         expect(response.body).to.be.jsonSchema(schema_get_card);
       })
